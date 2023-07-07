@@ -5,5 +5,4 @@ export type Country = {
   landArea: number,
   continents: string,
   population: number,
-  //flag
 }

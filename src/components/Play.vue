@@ -2,19 +2,18 @@
 import {onMounted, ref} from 'vue'
 import type {Country} from "@/model/Country";
 import countriesJson from "../assets/countries.json"
-import TagHistory from "@/components/TagHistory.vue";
+import TagHistoryLine from "@/components/TagHistoryLine.vue";
 
-export type tagHistoryProps = {
-  isCountryName: boolean,
-  label: string,
-  direction: number,
-  good: boolean
+export type tagHistoryLineProps = {
+  country: Country,
+  truthTable: Array<boolean>,
+  directionTable: Array<number>
 }
 
 const guess = ref('')
 let countries: Map<String, Country> = new Map()
-const tagHistoryList = ref<tagHistoryProps[]>([])
-let answer: Country;
+const tagHistoryLineList = ref<tagHistoryLineProps[]>([])
+let answer: Country | undefined;
 
 onMounted(() => {
   getDataFromJson();
@@ -30,8 +29,10 @@ function pickARandomAnswer() {
 }
 function evaluateGuess() {
  if (isValid(guess.value)) {
-   displayAttributes(countries.get(guess.value))
-   if(guess.value === answer.name)
+   if (countries) {
+     displayAttributes(countries.get(guess.value)!)
+   }
+   if(guess.value === answer!.name)
      PlayerWin()
  }
  guess.value = ''
@@ -56,87 +57,89 @@ function isValid(guess: string): boolean {
 
 function PlayerWin() {}
 function displayAttributes(country: Country) {
-  displayCountryName(country)
-  displayLat(country)
-  displayLong(country)
-  displayLandArea(country)
-  displayContinent(country)
-  displayPopulation(country)
-}
+  let truthTable: Array<boolean> = []
+  let directionTable: Array<number> = []
+  addLat(country, truthTable, directionTable)
+  addLong(country, truthTable, directionTable)
+  addLandArea(country, truthTable, directionTable)
+  addContinent(country, truthTable)
+  addPopulation(country, truthTable, directionTable)
 
-function displayCountryName(country: Country) {
-  addCountryNameHistory(country.name)
+  tagHistoryLineList.value.push({
+    country: country,
+    truthTable: truthTable,
+    directionTable: directionTable,
+  })
+
+  console.log(tagHistoryLineList)
+
 }
-function displayLat(country: Country) {
-  const latResult = answer.lat - country.lat;
+function addLat(country: Country, truthTable: Array<boolean>, directionTable: Array<Number>) {
+  const latResult = answer!.lat - country.lat;
   if(latResult === 0) {
-    addTagHistory(country.lat.toString(), 4, true)
+    truthTable.push(true);
+    directionTable.push(4);
   }
   if(latResult > 0) {
-    addTagHistory("North", 0, false)
+    truthTable.push(false);
+    directionTable.push(0);
   }
   if(latResult < 0) {
-    addTagHistory("South", 2, false)
+    truthTable.push(false);
+    directionTable.push(2);
   }
 }
-function displayLong(country: Country) {
-  const longResult = answer.long - country.long;
+function addLong(country: Country, truthTable: Array<boolean>, directionTable: Array<Number>) {
+  const longResult = answer!.long - country.long;
   if(longResult === 0) {
-    addTagHistory(country.long.toString(), 4, true)
-  }
+    truthTable.push(true);
+    directionTable.push(4);  }
   if(longResult > 0) {
-    addTagHistory("East", 1, false)
+    truthTable.push(false);
+    directionTable.push(1);
   }
   if(longResult < 0) {
-    addTagHistory("West", 3, false)
+    truthTable.push(false);
+    directionTable.push(3);
   }
 }
 
-function displayLandArea(country: Country) {
-  const landAreaDiff = answer.landArea - country.landArea;
+function addLandArea(country: Country, truthTable: Array<boolean>, directionTable: Array<Number>) {
+  const landAreaDiff = answer!.landArea - country.landArea;
   if (landAreaDiff === 0) {
-    addTagHistory(country.landArea.toString(), 4, true)
+    truthTable.push(true);
+    directionTable.push(4);
   }
   if(landAreaDiff > 0) {
-    addTagHistory(country.landArea.toString(), 0, false)
+    truthTable.push(false);
+    directionTable.push(0);
   }
   if(landAreaDiff < 0) {
-    addTagHistory(country.landArea.toString(), 2, false)
+    truthTable.push(false);
+    directionTable.push(2);
   }
 }
 
-function displayContinent(country: Country) {
-  country.continents === answer.continents
-      ? addTagHistory(country.continents, 4, true)
-      : addTagHistory(country.continents, 4, false)
+function addContinent(country: Country, truthTable: Array<boolean>) {
+  country.continents === answer!.continents
+      ? truthTable.push(true)
+      : truthTable.push(false)
 }
 
-function displayPopulation(country: Country) {
-  const populationDiff = answer.population - country.population;
+function addPopulation(country: Country, truthTable: Array<boolean>, directionTable: Array<Number>) {
+  const populationDiff = answer!.population - country.population;
   if (populationDiff === 0) {
-    addTagHistory(country.population.toString(), 4, true)
+    truthTable.push(true);
+    directionTable.push(4);
   }
   if(populationDiff > 0) {
-    addTagHistory(country.population.toString(), 0, false)
+    truthTable.push(false);
+    directionTable.push(0);
   }
   if(populationDiff < 0) {
-    addTagHistory(country.population.toString(), 2, false)
+    truthTable.push(false);
+    directionTable.push(2);
   }
-}
-
-function addCountryNameHistory(countryName: string) {
-  //TODO: ajouter icon cross or check
-  tagHistoryList.value.push({isCountryName: true, label: countryName, direction: 0, good: true})
-}
-
-//Implementer enum direction
-function addTagHistory(label: string, direction: number, good: boolean) {
-  console.log(tagHistoryList)
-  tagHistoryList.value.push({isCountryName: false, label: label, direction: direction, good: good})
-  //
-  // historyGrid!.appendChild(container)
-  // void container.offsetWidth;
-  // container.style.opacity = '1';
 }
 
 </script>
@@ -174,19 +177,20 @@ function addTagHistory(label: string, direction: number, good: boolean) {
 
 
     <div class="rightPart flex flex-col w-2/3 bg-[url('../assets/backgrounds/237.jpg)]">
-      <div class="mt-8 mx-10 p-6 overflow-y-auto snap-end max-h-[50vh] rounded-xl bg-[#ffffffde] backdrop-blur-md">
-        <div id="historyGrid" class="grid grid-cols-6 gap-2">
-          <h3 class="flex items-center justify-center">Country</h3>
-          <h3 class="flex items-center justify-center">Latitude</h3>
-          <h3 class="flex items-center justify-center">Longitude</h3>
-          <h3 class="flex items-center justify-center">LandArea</h3>
-          <h3 class="flex items-center justify-center">Continent</h3>
-          <h3 class="flex items-center justify-center">Population</h3>
-          <TagHistory class="rounded-full" v-for="tagHistory in tagHistoryList"
-            :is-country-name="tagHistory.isCountryName"
-            :label="tagHistory.label"
-            :direction="tagHistory.direction"
-            :good="tagHistory.good"
+      <div class="mt-8 mx-10 p-6 overflow-y-auto snap-end max-h-[50vh] rounded-xl bg-[#ffffffde] backdrop-blur-md drop-shadow-2xl">
+        <div class="flex flex-row mb-6">
+          <h3 class="flex w-1/6 items-center justify-center">COUNTRY</h3>
+          <h3 class="flex w-1/6 items-center justify-center">LATITUDE</h3>
+          <h3 class="flex w-1/6 items-center justify-center">LONGITUDE</h3>
+          <h3 class="flex w-1/6 items-center justify-center">LAND AREA</h3>
+          <h3 class="flex w-1/6 items-center justify-center">CONTINENT</h3>
+          <h3 class="flex w-1/6 items-center justify-center">POPULATION</h3>
+        </div>
+        <div id="historyGrid" class="flex flex-col-reverse gap-2">
+          <TagHistoryLine v-for="tagHistoryLine in tagHistoryLineList" class="transition-opacity duration-500 ease-in-out"
+                      :country="tagHistoryLine.country"
+                      :truthTable="tagHistoryLine.truthTable"
+                      :directionTable="tagHistoryLine.directionTable"
           />
         </div>
       </div>
@@ -203,17 +207,17 @@ textarea:focus, input:focus{
 }
 
 h1 {
-  font-size: 2rem;
+  font-size: 2.5rem;
   text-align: center;
 }
 
 h2 {
-  font-size: 1.5rem;
+  font-size: 1.75rem;
   text-align: left;
 }
 
 h3, label{
-  font-size: 1.25rem;
+  font-size: 1.5rem;
 }
 
 p, li{
@@ -223,5 +227,9 @@ p, li{
 .rightPart {
   background-image: url("../assets/backgrounds/237.jpg");
   background-size: cover;
+}
+
+.transition-opacity {
+  transition-property: opacity;
 }
 </style>

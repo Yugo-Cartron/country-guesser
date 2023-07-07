@@ -1,0 +1,47 @@
+<script setup lang="ts">
+import TagHistory from "@/components/TagHistory.vue";
+import TagName from "@/components/TagName.vue";
+import type {Country} from "@/model/Country";
+import TagContinent from "@/components/TagContinent.vue";
+import TagLocation from "@/components/TagLocation.vue";
+
+const props = defineProps({
+  country: Object as () => Country,
+  truthTable: Array<boolean>,
+  directionTable: Array<number>,
+})
+
+function arrowRotation(direction: number) {
+  if(direction < 4 ) {
+    switch (direction) {
+      case 0:
+        return "rotate-0"
+      case 1:
+        return "rotate-90"
+      case 2:
+        return "rotate-180"
+      case 3:
+        return "-rotate-90"
+      default :
+        return "correct"
+    }
+  }
+}
+
+</script>
+
+<template>
+  <div class="flex flex-row">
+    <TagName class="flex w-1/6 justify-center" :name="props.country.name" />
+    <TagLocation class="flex w-1/6 justify-center" :label="props.country.lat.toString()" :good="props.truthTable[0]" :rotation="arrowRotation(props.directionTable[0])"/>
+    <TagLocation class="flex w-1/6 justify-center" :label="props.country.long.toString()" :good="props.truthTable[1]" :rotation="arrowRotation(props.directionTable[1])"/>
+    <TagHistory class="flex w-1/6 justify-center" :label="props.country.landArea.toString()" :good="props.truthTable[2]" :rotation="arrowRotation(props.directionTable[2])"/>
+    <TagContinent class="flex w-1/6 justify-center" :continent="props.country.continents" :good="props.truthTable[3]" />
+    <TagHistory class="flex w-1/6 justify-center" :label="props.country.population.toString()" :good="props.truthTable[4]" :rotation="arrowRotation(props.directionTable[3])"/>
+  </div>
+  <div class="border-t-2 border-[#BDBDBD]"></div>
+</template>
+
+<style scoped>
+
+</style>
