@@ -26,11 +26,33 @@ switch(props.rotation) {
   case "-rotate-90" :
     direction.value = "West"
     break
+  default:
+    direction.value = canBeCastToNumber(props.label!)
+        ? enhanceBigNumbers(props.label!)
+        : props.label
 }
 
 const backgroundColor=ref('#CC0033')
 backgroundColor.value =
     props.good ? "#009934" : "#CC0033";
+
+const tagLabel = ref(props.label)
+
+tagLabel.value = canBeCastToNumber(props.label!)
+    ? enhanceBigNumbers(props.label!)
+    : props.label
+
+function canBeCastToNumber(str: string): boolean {
+  return !isNaN(+str);
+}
+function enhanceBigNumbers(bigNumber: string) {
+  if (bigNumber.includes('.')) {
+    const pointIndex = bigNumber.indexOf('.')
+    return bigNumber.slice(0, pointIndex + 3)
+  }
+  return bigNumber
+
+}
 </script>
 
 <template>
