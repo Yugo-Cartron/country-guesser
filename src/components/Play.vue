@@ -14,6 +14,7 @@ const guess = ref('')
 let countries: Map<String, Country> = new Map()
 const tagHistoryLineList = ref<tagHistoryLineProps[]>([])
 let answer: Country | undefined;
+const annabelle = ref(false)
 
 onMounted(() => {
   getDataFromJson();
@@ -27,15 +28,17 @@ function pickARandomAnswer() {
   const randomCountryName = countryNames[randomCountryIndex]
   return countries.get(randomCountryName)
 }
+
 function evaluateGuess() {
- if (isValid(guess.value)) {
-   if (countries) {
-     displayAttributes(countries.get(guess.value)!)
-   }
-   if(guess.value === answer!.name)
-     PlayerWin()
- }
- guess.value = ''
+  annabelle.value = (guess.value === 'Annabelle')
+  if (isValid(guess.value)) {
+    if (countries) {
+      displayAttributes(countries.get(guess.value)!)
+    }
+    if (guess.value === answer!.name)
+      PlayerWin()
+  }
+  guess.value = ''
 }
 
 function getDataFromJson() {
@@ -55,7 +58,9 @@ function isValid(guess: string): boolean {
   return countries.has(guess)
 }
 
-function PlayerWin() {}
+function PlayerWin() {
+}
+
 function displayAttributes(country: Country) {
   let truthTable: Array<boolean> = []
   let directionTable: Array<number> = []
@@ -74,31 +79,34 @@ function displayAttributes(country: Country) {
   console.log(tagHistoryLineList)
 
 }
+
 function addLat(country: Country, truthTable: Array<boolean>, directionTable: Array<Number>) {
   const latResult = answer!.lat - country.lat;
-  if(latResult === 0) {
+  if (latResult === 0) {
     truthTable.push(true);
     directionTable.push(4);
   }
-  if(latResult > 0) {
+  if (latResult > 0) {
     truthTable.push(false);
     directionTable.push(0);
   }
-  if(latResult < 0) {
+  if (latResult < 0) {
     truthTable.push(false);
     directionTable.push(2);
   }
 }
+
 function addLong(country: Country, truthTable: Array<boolean>, directionTable: Array<Number>) {
   const longResult = answer!.long - country.long;
-  if(longResult === 0) {
+  if (longResult === 0) {
     truthTable.push(true);
-    directionTable.push(4);  }
-  if(longResult > 0) {
+    directionTable.push(4);
+  }
+  if (longResult > 0) {
     truthTable.push(false);
     directionTable.push(1);
   }
-  if(longResult < 0) {
+  if (longResult < 0) {
     truthTable.push(false);
     directionTable.push(3);
   }
@@ -110,11 +118,11 @@ function addLandArea(country: Country, truthTable: Array<boolean>, directionTabl
     truthTable.push(true);
     directionTable.push(4);
   }
-  if(landAreaDiff > 0) {
+  if (landAreaDiff > 0) {
     truthTable.push(false);
     directionTable.push(0);
   }
-  if(landAreaDiff < 0) {
+  if (landAreaDiff < 0) {
     truthTable.push(false);
     directionTable.push(2);
   }
@@ -132,11 +140,11 @@ function addPopulation(country: Country, truthTable: Array<boolean>, directionTa
     truthTable.push(true);
     directionTable.push(4);
   }
-  if(populationDiff > 0) {
+  if (populationDiff > 0) {
     truthTable.push(false);
     directionTable.push(0);
   }
-  if(populationDiff < 0) {
+  if (populationDiff < 0) {
     truthTable.push(false);
     directionTable.push(2);
   }
@@ -163,21 +171,26 @@ function addPopulation(country: Country, truthTable: Array<boolean>, directionTa
       </div>
 
 
-
-      <form @submit.prevent="evaluateGuess" class="flex flex-row bg-[#eeeeee] rounded-full text-xl pl-10 py-1 border hover:border-[#BF8055]">
-        <input class="py-2" v-model="guess" placeholder="Ex: Argentina..." />
-        <button class="bg-[#BF8055] text-[#ffffff] rounded-full mr-2 m-1 py-3 px-8" type="submit" value="submit">Submit</button>
+      <form @submit.prevent="evaluateGuess"
+            class="flex flex-row bg-[#eeeeee] rounded-full text-xl pl-10 py-1 border hover:border-[#BF8055]">
+        <input class="py-2" v-model="guess" placeholder="Ex: Argentina..."/>
+        <button class="bg-[#BF8055] text-[#ffffff] rounded-full mr-2 m-1 py-3 px-8" type="submit" value="submit">
+          Submit
+        </button>
       </form>
 
-<!--      <div class="grid grid-cols-2 gap-10 text-2xl mt-20">-->
-<!--        <RouterLink to="/">Back home</RouterLink>-->
-<!--        <RouterLink to="/tutorial">How to play</RouterLink>-->
-<!--      </div>-->
+      <img v-if="annabelle" src="../assets/backgrounds/annabelle.png"/>
+
+      <!--      <div class="grid grid-cols-2 gap-10 text-2xl mt-20">-->
+      <!--        <RouterLink to="/">Back home</RouterLink>-->
+      <!--        <RouterLink to="/tutorial">How to play</RouterLink>-->
+      <!--      </div>-->
     </div>
 
 
     <div class="rightPart flex flex-col w-2/3 bg-[url('../assets/backgrounds/237.jpg)]">
-      <div class="mt-8 mx-10 p-6 overflow-y-auto snap-end max-h-[50vh] rounded-xl bg-[#ffffffde] backdrop-blur-md drop-shadow-2xl">
+      <div
+          class="mt-8 mx-10 p-6 overflow-y-auto snap-end max-h-[50vh] rounded-xl bg-[#ffffffde] backdrop-blur-md drop-shadow-2xl">
         <div class="flex flex-row mb-6">
           <h3 class="flex w-1/6 items-center justify-center">COUNTRY</h3>
           <h3 class="flex w-1/6 items-center justify-center">LATITUDE</h3>
@@ -187,10 +200,11 @@ function addPopulation(country: Country, truthTable: Array<boolean>, directionTa
           <h3 class="flex w-1/6 items-center justify-center">POPULATION</h3>
         </div>
         <div id="historyGrid" class="flex flex-col-reverse gap-2">
-          <TagHistoryLine v-for="tagHistoryLine in tagHistoryLineList" class="transition-opacity duration-500 ease-in-out"
-                      :country="tagHistoryLine.country"
-                      :truthTable="tagHistoryLine.truthTable"
-                      :directionTable="tagHistoryLine.directionTable"
+          <TagHistoryLine v-for="tagHistoryLine in tagHistoryLineList"
+                          class="transition-opacity duration-500 ease-in-out"
+                          :country="tagHistoryLine.country"
+                          :truthTable="tagHistoryLine.truthTable"
+                          :directionTable="tagHistoryLine.directionTable"
           />
         </div>
       </div>
@@ -202,7 +216,7 @@ function addPopulation(country: Country, truthTable: Array<boolean>, directionTa
 </template>
 
 <style scoped>
-textarea:focus, input:focus{
+textarea:focus, input:focus {
   outline: none;
 }
 
@@ -216,11 +230,11 @@ h2 {
   text-align: left;
 }
 
-h3, label{
+h3, label {
   font-size: 1.5rem;
 }
 
-p, li{
+p, li {
   font-size: 1rem;
 }
 

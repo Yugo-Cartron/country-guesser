@@ -25,10 +25,6 @@ function canBeCastToNumber(str: string): boolean {
 }
 function enhanceBigNumbers(bigNumber: string) {
   const digitsCount = bigNumber.length
-  if (bigNumber.includes('.')) {
-    const pointIndex = bigNumber.indexOf('.')
-    return bigNumber.slice(0, pointIndex + 3)
-  }
   if ( digitsCount > 6 ) {
     return bigNumber.slice(0, -6) + " M"
   }
