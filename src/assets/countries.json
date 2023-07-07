@@ -8,7 +8,7 @@
     "population": 10203140
   },
   {
-    "name": "Northern Mariana Islands",
+    "name": "N.ern Mariana Islands",
     "latitude": 15.2,
     "longitude": 145.75,
     "landArea": 464,
@@ -36,7 +36,7 @@
     "latitude": 21.75,
     "longitude": -71.583336,
     "landArea": 948,
-    "continents": "North America",
+    "continents": "N. America",
     "population": 38718
   },
   {
@@ -44,7 +44,7 @@
     "latitude": 32.333332,
     "longitude": -64.75,
     "landArea": 54,
-    "continents": "North America",
+    "continents": "N. America",
     "population": 63903
   },
   {
@@ -60,7 +60,7 @@
     "latitude": -17.0,
     "longitude": -65.0,
     "landArea": 1098581,
-    "continents": "South America",
+    "continents": "S. America",
     "population": 11673029
   },
   {
@@ -112,7 +112,7 @@
     "population": 55197
   },
   {
-    "name": "North Macedonia",
+    "name": "N. Macedonia",
     "latitude": 41.833332,
     "longitude": 22.0,
     "landArea": 25713,
@@ -132,7 +132,7 @@
     "latitude": 72.0,
     "longitude": -40.0,
     "landArea": 2166086,
-    "continents": "North America",
+    "continents": "N. America",
     "population": 56367
   },
   {
@@ -148,7 +148,7 @@
     "latitude": 15.5,
     "longitude": -90.25,
     "landArea": 108889,
-    "continents": "North America",
+    "continents": "N. America",
     "population": 16858333
   },
   {
@@ -156,7 +156,7 @@
     "latitude": 10.6918,
     "longitude": -61.2225,
     "landArea": 5130,
-    "continents": "North America",
+    "continents": "N. America",
     "population": 1399491
   },
   {
@@ -164,7 +164,7 @@
     "latitude": -10.0,
     "longitude": -76.0,
     "landArea": 1285216,
-    "continents": "South America",
+    "continents": "S. America",
     "population": 32971846
   },
   {
@@ -172,7 +172,7 @@
     "latitude": 4.0,
     "longitude": -56.0,
     "landArea": 163820,
-    "continents": "South America",
+    "continents": "S. America",
     "population": 586634
   },
   {
@@ -220,7 +220,7 @@
     "latitude": -51.75,
     "longitude": -59.0,
     "landArea": 12173,
-    "continents": "South America",
+    "continents": "S. America",
     "population": 2563
   },
   {
@@ -260,7 +260,7 @@
     "latitude": -2.0,
     "longitude": -77.5,
     "landArea": 276841,
-    "continents": "South America",
+    "continents": "S. America",
     "population": 17643060
   },
   {
@@ -308,7 +308,7 @@
     "latitude": 9.0,
     "longitude": -80.0,
     "landArea": 75417,
-    "continents": "North America",
+    "continents": "N. America",
     "population": 4314768
   },
   {
@@ -340,7 +340,7 @@
     "latitude": 15.0,
     "longitude": -86.5,
     "landArea": 112492,
-    "continents": "North America",
+    "continents": "N. America",
     "population": 9904608
   },
   {
@@ -356,7 +356,7 @@
     "latitude": -30.0,
     "longitude": -71.0,
     "landArea": 756102,
-    "continents": "South America",
+    "continents": "S. America",
     "population": 19116209
   },
   {
@@ -372,7 +372,7 @@
     "latitude": 17.333334,
     "longitude": -62.75,
     "landArea": 261,
-    "continents": "North America",
+    "continents": "N. America",
     "population": 53192
   },
   {
@@ -380,7 +380,7 @@
     "latitude": 18.5,
     "longitude": -63.416668,
     "landArea": 21,
-    "continents": "North America",
+    "continents": "N. America",
     "population": 4255
   },
   {
@@ -388,7 +388,7 @@
     "latitude": 23.0,
     "longitude": -102.0,
     "landArea": 1964375,
-    "continents": "North America",
+    "continents": "N. America",
     "population": 128932753
   },
   {
@@ -416,7 +416,7 @@
     "population": 3000
   },
   {
-    "name": "South Sudan",
+    "name": "S. Sudan",
     "latitude": 7.0,
     "longitude": 30.0,
     "landArea": 619745,
@@ -452,7 +452,7 @@
     "latitude": -23.0,
     "longitude": -58.0,
     "landArea": 406752,
-    "continents": "South America",
+    "continents": "S. America",
     "population": 7132530
   },
   {
@@ -468,7 +468,7 @@
     "latitude": 12.116667,
     "longitude": -61.666668,
     "landArea": 344,
-    "continents": "North America",
+    "continents": "N. America",
     "population": 112519
   },
   {
@@ -500,7 +500,7 @@
     "latitude": 60.0,
     "longitude": -95.0,
     "landArea": 9984670,
-    "continents": "North America",
+    "continents": "N. America",
     "population": 38005238
   },
   {
@@ -516,7 +516,7 @@
     "latitude": -10.0,
     "longitude": -55.0,
     "landArea": 8515767,
-    "continents": "South America",
+    "continents": "S. America",
     "population": 212559409
   },
   {
@@ -540,7 +540,7 @@
     "latitude": 12.116667,
     "longitude": -68.933334,
     "landArea": 444,
-    "continents": "North America",
+    "continents": "N. America",
     "population": 155014
   },
   {
@@ -620,7 +620,7 @@
     "latitude": 8.0,
     "longitude": -66.0,
     "landArea": 916445,
-    "continents": "South America",
+    "continents": "S. America",
     "population": 28435943
   },
   {
@@ -684,7 +684,7 @@
     "latitude": 18.25,
     "longitude": -77.5,
     "landArea": 10991,
-    "continents": "North America",
+    "continents": "N. America",
     "population": 2961161
   },
   {
@@ -692,7 +692,7 @@
     "latitude": 19.3133,
     "longitude": -81.2546,
     "landArea": 264,
-    "continents": "North America",
+    "continents": "N. America",
     "population": 65720
   },
   {
@@ -816,7 +816,7 @@
     "population": 29825968
   },
   {
-    "name": "South Korea",
+    "name": "S. Korea",
     "latitude": 37.0,
     "longitude": 127.5,
     "landArea": 100210,
@@ -844,7 +844,7 @@
     "latitude": 13.25,
     "longitude": -61.2,
     "landArea": 389,
-    "continents": "North America",
+    "continents": "N. America",
     "population": 110947
   },
   {
@@ -876,7 +876,7 @@
     "latitude": 13.833333,
     "longitude": -88.916664,
     "landArea": 21041,
-    "continents": "North America",
+    "continents": "N. America",
     "population": 6486201
   },
   {
@@ -892,7 +892,7 @@
     "latitude": 16.25,
     "longitude": -61.583332,
     "landArea": 1628,
-    "continents": "North America",
+    "continents": "N. America",
     "population": 400132
   },
   {
@@ -916,7 +916,7 @@
     "latitude": 19.0,
     "longitude": -70.666664,
     "landArea": 48671,
-    "continents": "North America",
+    "continents": "N. America",
     "population": 10847904
   },
   {
@@ -948,7 +948,7 @@
     "latitude": 46.833332,
     "longitude": -56.333332,
     "landArea": 242,
-    "continents": "North America",
+    "continents": "N. America",
     "population": 6069
   },
   {
@@ -972,7 +972,7 @@
     "latitude": 5.0,
     "longitude": -59.0,
     "landArea": 214969,
-    "continents": "South America",
+    "continents": "S. America",
     "population": 786559
   },
   {
@@ -984,7 +984,7 @@
     "population": 98462
   },
   {
-    "name": "North Korea",
+    "name": "N. Korea",
     "latitude": 40.0,
     "longitude": 127.0,
     "landArea": 120538,
@@ -1012,7 +1012,7 @@
     "latitude": 13.166667,
     "longitude": -59.533333,
     "landArea": 430,
-    "continents": "North America",
+    "continents": "N. America",
     "population": 287371
   },
   {
@@ -1020,7 +1020,7 @@
     "latitude": 4.0,
     "longitude": -72.0,
     "landArea": 1141748,
-    "continents": "South America",
+    "continents": "S. America",
     "population": 50882884
   },
   {
@@ -1076,7 +1076,7 @@
     "latitude": -34.0,
     "longitude": -64.0,
     "landArea": 2780400,
-    "continents": "South America",
+    "continents": "S. America",
     "population": 45376763
   },
   {
@@ -1108,7 +1108,7 @@
     "latitude": 10.0,
     "longitude": -84.0,
     "landArea": 51100,
-    "continents": "North America",
+    "continents": "N. America",
     "population": 5094114
   },
   {
@@ -1148,7 +1148,7 @@
     "latitude": 21.5,
     "longitude": -80.0,
     "landArea": 109884,
-    "continents": "North America",
+    "continents": "N. America",
     "population": 11326616
   },
   {
@@ -1172,7 +1172,7 @@
     "latitude": 17.25,
     "longitude": -88.75,
     "landArea": 22966,
-    "continents": "North America",
+    "continents": "N. America",
     "population": 397621
   },
   {
@@ -1180,7 +1180,7 @@
     "latitude": 25.0343,
     "longitude": -77.3963,
     "landArea": 13943,
-    "continents": "North America",
+    "continents": "N. America",
     "population": 393248
   },
   {
@@ -1188,7 +1188,7 @@
     "latitude": 12.5,
     "longitude": -69.96667,
     "landArea": 180,
-    "continents": "North America",
+    "continents": "N. America",
     "population": 106766
   },
   {
@@ -1228,7 +1228,7 @@
     "latitude": 13.0,
     "longitude": -85.0,
     "landArea": 130373,
-    "continents": "North America",
+    "continents": "N. America",
     "population": 6624554
   },
   {
@@ -1256,7 +1256,7 @@
     "population": 2562
   },
   {
-    "name": "South Africa",
+    "name": "S. Africa",
     "latitude": -29.0,
     "longitude": 24.0,
     "landArea": 1221037,
@@ -1280,7 +1280,7 @@
     "population": 2142252
   },
   {
-    "name": "South Georgia",
+    "name": "S. Georgia",
     "latitude": -54.5,
     "longitude": -37.0,
     "landArea": 3903,
@@ -1324,7 +1324,7 @@
     "latitude": 13.883333,
     "longitude": -60.966667,
     "landArea": 616,
-    "continents": "North America",
+    "continents": "N. America",
     "population": 183629
   },
   {
@@ -1348,7 +1348,7 @@
     "latitude": 18.25,
     "longitude": -66.5,
     "landArea": 8870,
-    "continents": "North America",
+    "continents": "N. America",
     "population": 3194034
   },
   {
@@ -1444,7 +1444,7 @@
     "latitude": 18.431383,
     "longitude": -64.62305,
     "landArea": 151,
-    "continents": "North America",
+    "continents": "N. America",
     "population": 30237
   },
   {
@@ -1516,7 +1516,7 @@
     "latitude": 12.18,
     "longitude": -68.25,
     "landArea": 328,
-    "continents": "North America",
+    "continents": "N. America",
     "population": 25987
   },
   {
@@ -1532,7 +1532,7 @@
     "latitude": 18.033333,
     "longitude": -63.05,
     "landArea": 34,
-    "continents": "North America",
+    "continents": "N. America",
     "population": 40812
   },
   {
@@ -1640,7 +1640,7 @@
     "population": 97338583
   },
   {
-    "name": "French Southern and Antarctic Lands",
+    "name": "French S.ern and Antarctic Lands",
     "latitude": -49.25,
     "longitude": 69.167,
     "landArea": 7747,
@@ -1692,7 +1692,7 @@
     "latitude": 19.0,
     "longitude": -72.416664,
     "landArea": 27750,
-    "continents": "North America",
+    "continents": "N. America",
     "population": 11402533
   },
   {
@@ -1700,7 +1700,7 @@
     "latitude": 18.35,
     "longitude": -64.933334,
     "landArea": 347,
-    "continents": "North America",
+    "continents": "N. America",
     "population": 106290
   },
   {
@@ -1788,7 +1788,7 @@
     "latitude": 4.0,
     "longitude": -53.0,
     "landArea": 83534,
-    "continents": "South America",
+    "continents": "S. America",
     "population": 254541
   },
   {
@@ -1796,7 +1796,7 @@
     "latitude": 38.0,
     "longitude": -97.0,
     "landArea": 9372610,
-    "continents": "North America",
+    "continents": "N. America",
     "population": 329484123
   },
   {
@@ -1804,7 +1804,7 @@
     "latitude": 16.75,
     "longitude": -62.2,
     "landArea": 102,
-    "continents": "North America",
+    "continents": "N. America",
     "population": 4922
   },
   {
@@ -1828,7 +1828,7 @@
     "latitude": 17.05,
     "longitude": -61.8,
     "landArea": 442,
-    "continents": "North America",
+    "continents": "N. America",
     "population": 97928
   },
   {
@@ -1836,7 +1836,7 @@
     "latitude": 18.0708,
     "longitude": 63.0501,
     "landArea": 53,
-    "continents": "North America",
+    "continents": "N. America",
     "population": 38659
   },
   {
@@ -1876,7 +1876,7 @@
     "latitude": 15.416667,
     "longitude": -61.333332,
     "landArea": 751,
-    "continents": "North America",
+    "continents": "N. America",
     "population": 71991
   },
   {
@@ -1892,7 +1892,7 @@
     "latitude": 18.25,
     "longitude": -63.166668,
     "landArea": 91,
-    "continents": "North America",
+    "continents": "N. America",
     "population": 13452
   },
   {
@@ -1908,7 +1908,7 @@
     "latitude": 14.666667,
     "longitude": -61.0,
     "landArea": 1128,
-    "continents": "North America",
+    "continents": "N. America",
     "population": 378243
   },
   {
@@ -1980,7 +1980,7 @@
     "latitude": -33.0,
     "longitude": -56.0,
     "landArea": 181034,
-    "continents": "South America",
+    "continents": "S. America",
     "population": 3473727
   },
   {
