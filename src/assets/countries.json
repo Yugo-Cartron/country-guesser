@@ -1,0 +1,2002 @@
+[
+  {
+    "name": "Jordan",
+    "latitude": 31.0,
+    "longitude": 36.0,
+    "landArea": 89342,
+    "continents": "Asia",
+    "population": 10203140
+  },
+  {
+    "name": "Northern Mariana Islands",
+    "latitude": 15.2,
+    "longitude": 145.75,
+    "landArea": 464,
+    "continents": "Oceania",
+    "population": 57557
+  },
+  {
+    "name": "Serbia",
+    "latitude": 44.0,
+    "longitude": 21.0,
+    "landArea": 88361,
+    "continents": "Europe",
+    "population": 6908224
+  },
+  {
+    "name": "Andorra",
+    "latitude": 42.5,
+    "longitude": 1.5,
+    "landArea": 468,
+    "continents": "Europe",
+    "population": 77265
+  },
+  {
+    "name": "Turks and Caicos Islands",
+    "latitude": 21.75,
+    "longitude": -71.583336,
+    "landArea": 948,
+    "continents": "North America",
+    "population": 38718
+  },
+  {
+    "name": "Bermuda",
+    "latitude": 32.333332,
+    "longitude": -64.75,
+    "landArea": 54,
+    "continents": "North America",
+    "population": 63903
+  },
+  {
+    "name": "Antarctica",
+    "latitude": -90.0,
+    "longitude": 0.0,
+    "landArea": 14000000,
+    "continents": "Antarctica",
+    "population": 1000
+  },
+  {
+    "name": "Bolivia",
+    "latitude": -17.0,
+    "longitude": -65.0,
+    "landArea": 1098581,
+    "continents": "South America",
+    "population": 11673029
+  },
+  {
+    "name": "Libya",
+    "latitude": 25.0,
+    "longitude": 17.0,
+    "landArea": 1759540,
+    "continents": "Africa",
+    "population": 6871287
+  },
+  {
+    "name": "Mali",
+    "latitude": 17.0,
+    "longitude": -4.0,
+    "landArea": 1240192,
+    "continents": "Africa",
+    "population": 20250834
+  },
+  {
+    "name": "Armenia",
+    "latitude": 40.0,
+    "longitude": 45.0,
+    "landArea": 29743,
+    "continents": "Asia",
+    "population": 2963234
+  },
+  {
+    "name": "Mauritius",
+    "latitude": -20.283333,
+    "longitude": 57.55,
+    "landArea": 2040,
+    "continents": "Africa",
+    "population": 1265740
+  },
+  {
+    "name": "Maldives",
+    "latitude": 3.25,
+    "longitude": 73.0,
+    "landArea": 300,
+    "continents": "Asia",
+    "population": 540542
+  },
+  {
+    "name": "American Samoa",
+    "latitude": -14.333333,
+    "longitude": -170.0,
+    "landArea": 199,
+    "continents": "Oceania",
+    "population": 55197
+  },
+  {
+    "name": "North Macedonia",
+    "latitude": 41.833332,
+    "longitude": 22.0,
+    "landArea": 25713,
+    "continents": "Europe",
+    "population": 2077132
+  },
+  {
+    "name": "Ethiopia",
+    "latitude": 8.0,
+    "longitude": 38.0,
+    "landArea": 1104300,
+    "continents": "Africa",
+    "population": 114963583
+  },
+  {
+    "name": "Greenland",
+    "latitude": 72.0,
+    "longitude": -40.0,
+    "landArea": 2166086,
+    "continents": "North America",
+    "population": 56367
+  },
+  {
+    "name": "Iraq",
+    "latitude": 33.0,
+    "longitude": 44.0,
+    "landArea": 438317,
+    "continents": "Asia",
+    "population": 40222503
+  },
+  {
+    "name": "Guatemala",
+    "latitude": 15.5,
+    "longitude": -90.25,
+    "landArea": 108889,
+    "continents": "North America",
+    "population": 16858333
+  },
+  {
+    "name": "Trinidad and Tobago",
+    "latitude": 10.6918,
+    "longitude": -61.2225,
+    "landArea": 5130,
+    "continents": "North America",
+    "population": 1399491
+  },
+  {
+    "name": "Peru",
+    "latitude": -10.0,
+    "longitude": -76.0,
+    "landArea": 1285216,
+    "continents": "South America",
+    "population": 32971846
+  },
+  {
+    "name": "Suriname",
+    "latitude": 4.0,
+    "longitude": -56.0,
+    "landArea": 163820,
+    "continents": "South America",
+    "population": 586634
+  },
+  {
+    "name": "Sweden",
+    "latitude": 62.0,
+    "longitude": 15.0,
+    "landArea": 450295,
+    "continents": "Europe",
+    "population": 10353442
+  },
+  {
+    "name": "New Caledonia",
+    "latitude": -21.5,
+    "longitude": 165.5,
+    "landArea": 18575,
+    "continents": "Oceania",
+    "population": 271960
+  },
+  {
+    "name": "French Polynesia",
+    "latitude": 17.6797,
+    "longitude": 149.4068,
+    "landArea": 4167,
+    "continents": "Oceania",
+    "population": 280904
+  },
+  {
+    "name": "Benin",
+    "latitude": 9.5,
+    "longitude": 2.25,
+    "landArea": 112622,
+    "continents": "Africa",
+    "population": 12123198
+  },
+  {
+    "name": "Estonia",
+    "latitude": 59.0,
+    "longitude": 26.0,
+    "landArea": 45227,
+    "continents": "Europe",
+    "population": 1331057
+  },
+  {
+    "name": "Falkland Islands",
+    "latitude": -51.75,
+    "longitude": -59.0,
+    "landArea": 12173,
+    "continents": "South America",
+    "population": 2563
+  },
+  {
+    "name": "Guam",
+    "latitude": 13.466666,
+    "longitude": 144.78334,
+    "landArea": 549,
+    "continents": "Oceania",
+    "population": 168783
+  },
+  {
+    "name": "Zimbabwe",
+    "latitude": -20.0,
+    "longitude": 30.0,
+    "landArea": 390757,
+    "continents": "Africa",
+    "population": 14862927
+  },
+  {
+    "name": "Slovakia",
+    "latitude": 48.666668,
+    "longitude": 19.5,
+    "landArea": 49037,
+    "continents": "Europe",
+    "population": 5458827
+  },
+  {
+    "name": "Netherlands",
+    "latitude": 52.5,
+    "longitude": 5.75,
+    "landArea": 41850,
+    "continents": "Europe",
+    "population": 16655799
+  },
+  {
+    "name": "Ecuador",
+    "latitude": -2.0,
+    "longitude": -77.5,
+    "landArea": 276841,
+    "continents": "South America",
+    "population": 17643060
+  },
+  {
+    "name": "Saudi Arabia",
+    "latitude": 25.0,
+    "longitude": 45.0,
+    "landArea": 2149690,
+    "continents": "Asia",
+    "population": 34813867
+  },
+  {
+    "name": "United Arab Emirates",
+    "latitude": 24.0,
+    "longitude": 54.0,
+    "landArea": 83600,
+    "continents": "Asia",
+    "population": 9890400
+  },
+  {
+    "name": "Afghanistan",
+    "latitude": 33.0,
+    "longitude": 65.0,
+    "landArea": 652230,
+    "continents": "Asia",
+    "population": 40218234
+  },
+  {
+    "name": "United States Minor Outlying Islands",
+    "latitude": 19.3,
+    "longitude": 166.63333,
+    "landArea": 34,
+    "continents": "Oceania",
+    "population": 300
+  },
+  {
+    "name": "Central African Republic",
+    "latitude": 7.0,
+    "longitude": 21.0,
+    "landArea": 622984,
+    "continents": "Africa",
+    "population": 4829764
+  },
+  {
+    "name": "Panama",
+    "latitude": 9.0,
+    "longitude": -80.0,
+    "landArea": 75417,
+    "continents": "North America",
+    "population": 4314768
+  },
+  {
+    "name": "Vatican City",
+    "latitude": 41.9,
+    "longitude": 12.45,
+    "landArea": 0,
+    "continents": "Europe",
+    "population": 451
+  },
+  {
+    "name": "Syria",
+    "latitude": 35.0,
+    "longitude": 38.0,
+    "landArea": 185180,
+    "continents": "Asia",
+    "population": 17500657
+  },
+  {
+    "name": "Vanuatu",
+    "latitude": -16.0,
+    "longitude": 167.0,
+    "landArea": 12189,
+    "continents": "Oceania",
+    "population": 307150
+  },
+  {
+    "name": "Honduras",
+    "latitude": 15.0,
+    "longitude": -86.5,
+    "landArea": 112492,
+    "continents": "North America",
+    "population": 9904608
+  },
+  {
+    "name": "Kiribati",
+    "latitude": 1.4166666,
+    "longitude": 173.0,
+    "landArea": 811,
+    "continents": "Oceania",
+    "population": 119446
+  },
+  {
+    "name": "Chile",
+    "latitude": -30.0,
+    "longitude": -71.0,
+    "landArea": 756102,
+    "continents": "South America",
+    "population": 19116209
+  },
+  {
+    "name": "Burkina Faso",
+    "latitude": 13.0,
+    "longitude": -2.0,
+    "landArea": 272967,
+    "continents": "Africa",
+    "population": 20903278
+  },
+  {
+    "name": "Saint Kitts and Nevis",
+    "latitude": 17.333334,
+    "longitude": -62.75,
+    "landArea": 261,
+    "continents": "North America",
+    "population": 53192
+  },
+  {
+    "name": "Saint Barthélemy",
+    "latitude": 18.5,
+    "longitude": -63.416668,
+    "landArea": 21,
+    "continents": "North America",
+    "population": 4255
+  },
+  {
+    "name": "Mexico",
+    "latitude": 23.0,
+    "longitude": -102.0,
+    "landArea": 1964375,
+    "continents": "North America",
+    "population": 128932753
+  },
+  {
+    "name": "China",
+    "latitude": 35.0,
+    "longitude": 105.0,
+    "landArea": 9706961,
+    "continents": "Asia",
+    "population": 1402112000
+  },
+  {
+    "name": "Timor-Leste",
+    "latitude": -8.833333,
+    "longitude": 125.916664,
+    "landArea": 14874,
+    "continents": "Oceania",
+    "population": 1318442
+  },
+  {
+    "name": "British Indian Ocean Territory",
+    "latitude": -6.0,
+    "longitude": 71.5,
+    "landArea": 60,
+    "continents": "Asia",
+    "population": 3000
+  },
+  {
+    "name": "South Sudan",
+    "latitude": 7.0,
+    "longitude": 30.0,
+    "landArea": 619745,
+    "continents": "Africa",
+    "population": 11193729
+  },
+  {
+    "name": "Eswatini",
+    "latitude": -26.5,
+    "longitude": 31.5,
+    "landArea": 17364,
+    "continents": "Africa",
+    "population": 1160164
+  },
+  {
+    "name": "Uzbekistan",
+    "latitude": 41.0,
+    "longitude": 64.0,
+    "landArea": 447400,
+    "continents": "Asia",
+    "population": 34232050
+  },
+  {
+    "name": "Indonesia",
+    "latitude": -5.0,
+    "longitude": 120.0,
+    "landArea": 1904569,
+    "continents": "Asia",
+    "population": 273523621
+  },
+  {
+    "name": "Paraguay",
+    "latitude": -23.0,
+    "longitude": -58.0,
+    "landArea": 406752,
+    "continents": "South America",
+    "population": 7132530
+  },
+  {
+    "name": "Monaco",
+    "latitude": 43.733334,
+    "longitude": 7.4,
+    "landArea": 2,
+    "continents": "Europe",
+    "population": 39244
+  },
+  {
+    "name": "Grenada",
+    "latitude": 12.116667,
+    "longitude": -61.666668,
+    "landArea": 344,
+    "continents": "North America",
+    "population": 112519
+  },
+  {
+    "name": "Croatia",
+    "latitude": 45.166668,
+    "longitude": 15.5,
+    "landArea": 56594,
+    "continents": "Europe",
+    "population": 4047200
+  },
+  {
+    "name": "Poland",
+    "latitude": 52.0,
+    "longitude": 20.0,
+    "landArea": 312679,
+    "continents": "Europe",
+    "population": 37950802
+  },
+  {
+    "name": "Bosnia and Herzegovina",
+    "latitude": 44.0,
+    "longitude": 18.0,
+    "landArea": 51209,
+    "continents": "Europe",
+    "population": 3280815
+  },
+  {
+    "name": "Canada",
+    "latitude": 60.0,
+    "longitude": -95.0,
+    "landArea": 9984670,
+    "continents": "North America",
+    "population": 38005238
+  },
+  {
+    "name": "Portugal",
+    "latitude": 39.5,
+    "longitude": -8.0,
+    "landArea": 92090,
+    "continents": "Europe",
+    "population": 10305564
+  },
+  {
+    "name": "Brazil",
+    "latitude": -10.0,
+    "longitude": -55.0,
+    "landArea": 8515767,
+    "continents": "South America",
+    "population": 212559409
+  },
+  {
+    "name": "Mauritania",
+    "latitude": 20.0,
+    "longitude": -12.0,
+    "landArea": 1030700,
+    "continents": "Africa",
+    "population": 4649660
+  },
+  {
+    "name": "Israel",
+    "latitude": 31.47,
+    "longitude": 35.13,
+    "landArea": 20770,
+    "continents": "Asia",
+    "population": 9216900
+  },
+  {
+    "name": "Curaçao",
+    "latitude": 12.116667,
+    "longitude": -68.933334,
+    "landArea": 444,
+    "continents": "North America",
+    "population": 155014
+  },
+  {
+    "name": "Brunei",
+    "latitude": 4.5,
+    "longitude": 114.666664,
+    "landArea": 5765,
+    "continents": "Asia",
+    "population": 437483
+  },
+  {
+    "name": "Angola",
+    "latitude": -12.5,
+    "longitude": 18.5,
+    "landArea": 1246700,
+    "continents": "Africa",
+    "population": 32866268
+  },
+  {
+    "name": "Malta",
+    "latitude": 35.9375,
+    "longitude": 14.3754,
+    "landArea": 316,
+    "continents": "Europe",
+    "population": 525285
+  },
+  {
+    "name": "Belarus",
+    "latitude": 53.0,
+    "longitude": 28.0,
+    "landArea": 207600,
+    "continents": "Europe",
+    "population": 9398861
+  },
+  {
+    "name": "Turkey",
+    "latitude": 39.0,
+    "longitude": 35.0,
+    "landArea": 783562,
+    "continents": "Asia",
+    "population": 84339067
+  },
+  {
+    "name": "Finland",
+    "latitude": 64.0,
+    "longitude": 26.0,
+    "landArea": 338424,
+    "continents": "Europe",
+    "population": 5530719
+  },
+  {
+    "name": "Gibraltar",
+    "latitude": 36.133335,
+    "longitude": -5.35,
+    "landArea": 6,
+    "continents": "Europe",
+    "population": 33691
+  },
+  {
+    "name": "Bhutan",
+    "latitude": 27.5,
+    "longitude": 90.5,
+    "landArea": 38394,
+    "continents": "Asia",
+    "population": 771612
+  },
+  {
+    "name": "Spain",
+    "latitude": 40.0,
+    "longitude": -4.0,
+    "landArea": 505992,
+    "continents": "Europe",
+    "population": 47351567
+  },
+  {
+    "name": "Venezuela",
+    "latitude": 8.0,
+    "longitude": -66.0,
+    "landArea": 916445,
+    "continents": "South America",
+    "population": 28435943
+  },
+  {
+    "name": "Qatar",
+    "latitude": 25.5,
+    "longitude": 51.25,
+    "landArea": 11586,
+    "continents": "Asia",
+    "population": 2881060
+  },
+  {
+    "name": "Czechia",
+    "latitude": 49.75,
+    "longitude": 15.5,
+    "landArea": 78865,
+    "continents": "Europe",
+    "population": 10698896
+  },
+  {
+    "name": "Kuwait",
+    "latitude": 29.5,
+    "longitude": 45.75,
+    "landArea": 17818,
+    "continents": "Asia",
+    "population": 4270563
+  },
+  {
+    "name": "Montenegro",
+    "latitude": 42.5,
+    "longitude": 19.3,
+    "landArea": 13812,
+    "continents": "Europe",
+    "population": 621718
+  },
+  {
+    "name": "Bouvet Island",
+    "latitude": 54.4208,
+    "longitude": 3.3464,
+    "landArea": 49,
+    "continents": "Antarctica",
+    "population": 0
+  },
+  {
+    "name": "India",
+    "latitude": 20.0,
+    "longitude": 77.0,
+    "landArea": 3287590,
+    "continents": "Asia",
+    "population": 1380004385
+  },
+  {
+    "name": "New Zealand",
+    "latitude": -41.0,
+    "longitude": 174.0,
+    "landArea": 270467,
+    "continents": "Oceania",
+    "population": 5084300
+  },
+  {
+    "name": "Jamaica",
+    "latitude": 18.25,
+    "longitude": -77.5,
+    "landArea": 10991,
+    "continents": "North America",
+    "population": 2961161
+  },
+  {
+    "name": "Cayman Islands",
+    "latitude": 19.3133,
+    "longitude": -81.2546,
+    "landArea": 264,
+    "continents": "North America",
+    "population": 65720
+  },
+  {
+    "name": "San Marino",
+    "latitude": 43.766666,
+    "longitude": 12.416667,
+    "landArea": 61,
+    "continents": "Europe",
+    "population": 33938
+  },
+  {
+    "name": "Republic of the Congo",
+    "latitude": -1.0,
+    "longitude": 15.0,
+    "landArea": 342000,
+    "continents": "Africa",
+    "population": 5657000
+  },
+  {
+    "name": "Pakistan",
+    "latitude": 30.0,
+    "longitude": 70.0,
+    "landArea": 881912,
+    "continents": "Asia",
+    "population": 220892331
+  },
+  {
+    "name": "France",
+    "latitude": 46.0,
+    "longitude": 2.0,
+    "landArea": 551695,
+    "continents": "Europe",
+    "population": 67391582
+  },
+  {
+    "name": "Kazakhstan",
+    "latitude": 48.0196,
+    "longitude": 66.9237,
+    "landArea": 2724900,
+    "continents": "Asia",
+    "population": 18754440
+  },
+  {
+    "name": "Bahrain",
+    "latitude": 26.0,
+    "longitude": 50.55,
+    "landArea": 765,
+    "continents": "Asia",
+    "population": 1701583
+  },
+  {
+    "name": "Fiji",
+    "latitude": 17.7134,
+    "longitude": 178.065,
+    "landArea": 18272,
+    "continents": "Oceania",
+    "population": 896444
+  },
+  {
+    "name": "Iceland",
+    "latitude": 65.0,
+    "longitude": -18.0,
+    "landArea": 103000,
+    "continents": "Europe",
+    "population": 366425
+  },
+  {
+    "name": "Myanmar",
+    "latitude": 22.0,
+    "longitude": 98.0,
+    "landArea": 676578,
+    "continents": "Asia",
+    "population": 54409794
+  },
+  {
+    "name": "Bangladesh",
+    "latitude": 24.0,
+    "longitude": 90.0,
+    "landArea": 147570,
+    "continents": "Asia",
+    "population": 164689383
+  },
+  {
+    "name": "Philippines",
+    "latitude": 13.0,
+    "longitude": 122.0,
+    "landArea": 342353,
+    "continents": "Asia",
+    "population": 109581085
+  },
+  {
+    "name": "Equatorial Guinea",
+    "latitude": 2.0,
+    "longitude": 10.0,
+    "landArea": 28051,
+    "continents": "Africa",
+    "population": 1402985
+  },
+  {
+    "name": "Ireland",
+    "latitude": 53.0,
+    "longitude": -8.0,
+    "landArea": 70273,
+    "continents": "Europe",
+    "population": 4994724
+  },
+  {
+    "name": "Nepal",
+    "latitude": 28.0,
+    "longitude": 84.0,
+    "landArea": 147181,
+    "continents": "Asia",
+    "population": 29136808
+  },
+  {
+    "name": "Yemen",
+    "latitude": 15.0,
+    "longitude": 48.0,
+    "landArea": 527968,
+    "continents": "Asia",
+    "population": 29825968
+  },
+  {
+    "name": "South Korea",
+    "latitude": 37.0,
+    "longitude": 127.5,
+    "landArea": 100210,
+    "continents": "Asia",
+    "population": 51780579
+  },
+  {
+    "name": "Denmark",
+    "latitude": 56.0,
+    "longitude": 10.0,
+    "landArea": 43094,
+    "continents": "Europe",
+    "population": 5831404
+  },
+  {
+    "name": "Oman",
+    "latitude": 21.0,
+    "longitude": 57.0,
+    "landArea": 309500,
+    "continents": "Asia",
+    "population": 5106622
+  },
+  {
+    "name": "Saint Vincent and the Grenadines",
+    "latitude": 13.25,
+    "longitude": -61.2,
+    "landArea": 389,
+    "continents": "North America",
+    "population": 110947
+  },
+  {
+    "name": "Eritrea",
+    "latitude": 15.0,
+    "longitude": 39.0,
+    "landArea": 117600,
+    "continents": "Africa",
+    "population": 5352000
+  },
+  {
+    "name": "Australia",
+    "latitude": -27.0,
+    "longitude": 133.0,
+    "landArea": 7692024,
+    "continents": "Oceania",
+    "population": 25687041
+  },
+  {
+    "name": "Iran",
+    "latitude": 32.0,
+    "longitude": 53.0,
+    "landArea": 1648195,
+    "continents": "Asia",
+    "population": 83992953
+  },
+  {
+    "name": "El Salvador",
+    "latitude": 13.833333,
+    "longitude": -88.916664,
+    "landArea": 21041,
+    "continents": "North America",
+    "population": 6486201
+  },
+  {
+    "name": "Tanzania",
+    "latitude": -6.0,
+    "longitude": 35.0,
+    "landArea": 945087,
+    "continents": "Africa",
+    "population": 59734213
+  },
+  {
+    "name": "Guadeloupe",
+    "latitude": 16.25,
+    "longitude": -61.583332,
+    "landArea": 1628,
+    "continents": "North America",
+    "population": 400132
+  },
+  {
+    "name": "Solomon Islands",
+    "latitude": -8.0,
+    "longitude": 159.0,
+    "landArea": 28896,
+    "continents": "Oceania",
+    "population": 686878
+  },
+  {
+    "name": "Kenya",
+    "latitude": 1.0,
+    "longitude": 38.0,
+    "landArea": 580367,
+    "continents": "Africa",
+    "population": 53771300
+  },
+  {
+    "name": "Dominican Republic",
+    "latitude": 19.0,
+    "longitude": -70.666664,
+    "landArea": 48671,
+    "continents": "North America",
+    "population": 10847904
+  },
+  {
+    "name": "Greece",
+    "latitude": 39.0,
+    "longitude": 22.0,
+    "landArea": 131990,
+    "continents": "Europe",
+    "population": 10715549
+  },
+  {
+    "name": "Guernsey",
+    "latitude": 49.466667,
+    "longitude": -2.5833333,
+    "landArea": 78,
+    "continents": "Europe",
+    "population": 62999
+  },
+  {
+    "name": "Rwanda",
+    "latitude": -2.0,
+    "longitude": 30.0,
+    "landArea": 26338,
+    "continents": "Africa",
+    "population": 12952209
+  },
+  {
+    "name": "Saint Pierre and Miquelon",
+    "latitude": 46.833332,
+    "longitude": -56.333332,
+    "landArea": 242,
+    "continents": "North America",
+    "population": 6069
+  },
+  {
+    "name": "Tuvalu",
+    "latitude": -8.0,
+    "longitude": 178.0,
+    "landArea": 26,
+    "continents": "Oceania",
+    "population": 11792
+  },
+  {
+    "name": "Taiwan",
+    "latitude": 23.5,
+    "longitude": 121.0,
+    "landArea": 36193,
+    "continents": "Asia",
+    "population": 23503349
+  },
+  {
+    "name": "Guyana",
+    "latitude": 5.0,
+    "longitude": -59.0,
+    "landArea": 214969,
+    "continents": "South America",
+    "population": 786559
+  },
+  {
+    "name": "Seychelles",
+    "latitude": -4.5833335,
+    "longitude": 55.666668,
+    "landArea": 452,
+    "continents": "Africa",
+    "population": 98462
+  },
+  {
+    "name": "North Korea",
+    "latitude": 40.0,
+    "longitude": 127.0,
+    "landArea": 120538,
+    "continents": "Asia",
+    "population": 25778815
+  },
+  {
+    "name": "Botswana",
+    "latitude": -22.0,
+    "longitude": 24.0,
+    "landArea": 582000,
+    "continents": "Africa",
+    "population": 2351625
+  },
+  {
+    "name": "Cambodia",
+    "latitude": 13.0,
+    "longitude": 105.0,
+    "landArea": 181035,
+    "continents": "Asia",
+    "population": 16718971
+  },
+  {
+    "name": "Barbados",
+    "latitude": 13.166667,
+    "longitude": -59.533333,
+    "landArea": 430,
+    "continents": "North America",
+    "population": 287371
+  },
+  {
+    "name": "Colombia",
+    "latitude": 4.0,
+    "longitude": -72.0,
+    "landArea": 1141748,
+    "continents": "South America",
+    "population": 50882884
+  },
+  {
+    "name": "Ukraine",
+    "latitude": 49.0,
+    "longitude": 32.0,
+    "landArea": 603500,
+    "continents": "Europe",
+    "population": 44134693
+  },
+  {
+    "name": "Ivory Coast",
+    "latitude": 8.0,
+    "longitude": -5.0,
+    "landArea": 322463,
+    "continents": "Africa",
+    "population": 26378275
+  },
+  {
+    "name": "Nauru",
+    "latitude": -0.5333333,
+    "longitude": 166.91667,
+    "landArea": 21,
+    "continents": "Oceania",
+    "population": 10834
+  },
+  {
+    "name": "Namibia",
+    "latitude": -22.0,
+    "longitude": 17.0,
+    "landArea": 825615,
+    "continents": "Africa",
+    "population": 2540916
+  },
+  {
+    "name": "Chad",
+    "latitude": 15.0,
+    "longitude": 19.0,
+    "landArea": 1284000,
+    "continents": "Africa",
+    "population": 16425859
+  },
+  {
+    "name": "Tonga",
+    "latitude": -20.0,
+    "longitude": -175.0,
+    "landArea": 747,
+    "continents": "Oceania",
+    "population": 105697
+  },
+  {
+    "name": "Argentina",
+    "latitude": -34.0,
+    "longitude": -64.0,
+    "landArea": 2780400,
+    "continents": "South America",
+    "population": 45376763
+  },
+  {
+    "name": "Christmas Island",
+    "latitude": -10.5,
+    "longitude": 105.666664,
+    "landArea": 135,
+    "continents": "Asia",
+    "population": 2072
+  },
+  {
+    "name": "Niger",
+    "latitude": 16.0,
+    "longitude": 8.0,
+    "landArea": 1267000,
+    "continents": "Africa",
+    "population": 24206636
+  },
+  {
+    "name": "Marshall Islands",
+    "latitude": 9.0,
+    "longitude": 168.0,
+    "landArea": 181,
+    "continents": "Oceania",
+    "population": 59194
+  },
+  {
+    "name": "Costa Rica",
+    "latitude": 10.0,
+    "longitude": -84.0,
+    "landArea": 51100,
+    "continents": "North America",
+    "population": 5094114
+  },
+  {
+    "name": "Ghana",
+    "latitude": 8.0,
+    "longitude": -2.0,
+    "landArea": 238533,
+    "continents": "Africa",
+    "population": 31072945
+  },
+  {
+    "name": "Austria",
+    "latitude": 47.333332,
+    "longitude": 13.333333,
+    "landArea": 83871,
+    "continents": "Europe",
+    "population": 8917205
+  },
+  {
+    "name": "Saint Helena, Ascension and Tristan da Cunha",
+    "latitude": -15.95,
+    "longitude": -5.72,
+    "landArea": 394,
+    "continents": "Africa",
+    "population": 53192
+  },
+  {
+    "name": "Palestine",
+    "latitude": 31.9,
+    "longitude": 35.2,
+    "landArea": 6220,
+    "continents": "Asia",
+    "population": 4803269
+  },
+  {
+    "name": "Cuba",
+    "latitude": 21.5,
+    "longitude": -80.0,
+    "landArea": 109884,
+    "continents": "North America",
+    "population": 11326616
+  },
+  {
+    "name": "Hungary",
+    "latitude": 47.0,
+    "longitude": 20.0,
+    "landArea": 93028,
+    "continents": "Europe",
+    "population": 9749763
+  },
+  {
+    "name": "Micronesia",
+    "latitude": 6.9166665,
+    "longitude": 158.25,
+    "landArea": 702,
+    "continents": "Oceania",
+    "population": 115021
+  },
+  {
+    "name": "Belize",
+    "latitude": 17.25,
+    "longitude": -88.75,
+    "landArea": 22966,
+    "continents": "North America",
+    "population": 397621
+  },
+  {
+    "name": "Bahamas",
+    "latitude": 25.0343,
+    "longitude": -77.3963,
+    "landArea": 13943,
+    "continents": "North America",
+    "population": 393248
+  },
+  {
+    "name": "Aruba",
+    "latitude": 12.5,
+    "longitude": -69.96667,
+    "landArea": 180,
+    "continents": "North America",
+    "population": 106766
+  },
+  {
+    "name": "São Tomé and Príncipe",
+    "latitude": 1.0,
+    "longitude": 7.0,
+    "landArea": 964,
+    "continents": "Africa",
+    "population": 219161
+  },
+  {
+    "name": "Russia",
+    "latitude": 60.0,
+    "longitude": 100.0,
+    "landArea": 17098242,
+    "continents": "Europe",
+    "population": 144104080
+  },
+  {
+    "name": "Luxembourg",
+    "latitude": 49.75,
+    "longitude": 6.1666665,
+    "landArea": 2586,
+    "continents": "Europe",
+    "population": 632275
+  },
+  {
+    "name": "Faroe Islands",
+    "latitude": 62.0,
+    "longitude": -7.0,
+    "landArea": 1393,
+    "continents": "Europe",
+    "population": 48865
+  },
+  {
+    "name": "Nicaragua",
+    "latitude": 13.0,
+    "longitude": -85.0,
+    "landArea": 130373,
+    "continents": "North America",
+    "population": 6624554
+  },
+  {
+    "name": "Tunisia",
+    "latitude": 34.0,
+    "longitude": 9.0,
+    "landArea": 163610,
+    "continents": "Africa",
+    "population": 11818618
+  },
+  {
+    "name": "DR Congo",
+    "latitude": 0.0,
+    "longitude": 25.0,
+    "landArea": 2344858,
+    "continents": "Africa",
+    "population": 108407721
+  },
+  {
+    "name": "Svalbard and Jan Mayen",
+    "latitude": 78.0,
+    "longitude": 20.0,
+    "landArea": -1,
+    "continents": "Europe",
+    "population": 2562
+  },
+  {
+    "name": "South Africa",
+    "latitude": -29.0,
+    "longitude": 24.0,
+    "landArea": 1221037,
+    "continents": "Africa",
+    "population": 59308690
+  },
+  {
+    "name": "Sierra Leone",
+    "latitude": 8.5,
+    "longitude": -11.5,
+    "landArea": 71740,
+    "continents": "Africa",
+    "population": 7976985
+  },
+  {
+    "name": "Lesotho",
+    "latitude": -29.5,
+    "longitude": 28.5,
+    "landArea": 30355,
+    "continents": "Africa",
+    "population": 2142252
+  },
+  {
+    "name": "South Georgia",
+    "latitude": -54.5,
+    "longitude": -37.0,
+    "landArea": 3903,
+    "continents": "Antarctica",
+    "population": 30
+  },
+  {
+    "name": "Italy",
+    "latitude": 42.833332,
+    "longitude": 12.833333,
+    "landArea": 301336,
+    "continents": "Europe",
+    "population": 59554023
+  },
+  {
+    "name": "Djibouti",
+    "latitude": 11.5,
+    "longitude": 43.0,
+    "landArea": 23200,
+    "continents": "Africa",
+    "population": 988002
+  },
+  {
+    "name": "Heard Island and McDonald Islands",
+    "latitude": 53.0818,
+    "longitude": 73.5042,
+    "landArea": 412,
+    "continents": "Antarctica",
+    "population": 0
+  },
+  {
+    "name": "Sri Lanka",
+    "latitude": 7.0,
+    "longitude": 81.0,
+    "landArea": 65610,
+    "continents": "Asia",
+    "population": 21919000
+  },
+  {
+    "name": "Saint Lucia",
+    "latitude": 13.883333,
+    "longitude": -60.966667,
+    "landArea": 616,
+    "continents": "North America",
+    "population": 183629
+  },
+  {
+    "name": "Samoa",
+    "latitude": -13.583333,
+    "longitude": -172.33333,
+    "landArea": 2842,
+    "continents": "Oceania",
+    "population": 198410
+  },
+  {
+    "name": "Cocos (Keeling) Islands",
+    "latitude": 12.1642,
+    "longitude": 96.871,
+    "landArea": 14,
+    "continents": "Asia",
+    "population": 544
+  },
+  {
+    "name": "Puerto Rico",
+    "latitude": 18.25,
+    "longitude": -66.5,
+    "landArea": 8870,
+    "continents": "North America",
+    "population": 3194034
+  },
+  {
+    "name": "Gabon",
+    "latitude": -1.0,
+    "longitude": 11.75,
+    "landArea": 267668,
+    "continents": "Africa",
+    "population": 2225728
+  },
+  {
+    "name": "Turkmenistan",
+    "latitude": 40.0,
+    "longitude": 60.0,
+    "landArea": 488100,
+    "continents": "Asia",
+    "population": 6031187
+  },
+  {
+    "name": "Latvia",
+    "latitude": 57.0,
+    "longitude": 25.0,
+    "landArea": 64559,
+    "continents": "Europe",
+    "population": 1901548
+  },
+  {
+    "name": "Senegal",
+    "latitude": 14.0,
+    "longitude": -14.0,
+    "landArea": 196722,
+    "continents": "Africa",
+    "population": 16743930
+  },
+  {
+    "name": "Belgium",
+    "latitude": 50.833332,
+    "longitude": 4.0,
+    "landArea": 30528,
+    "continents": "Europe",
+    "population": 11555997
+  },
+  {
+    "name": "Moldova",
+    "latitude": 47.0,
+    "longitude": 29.0,
+    "landArea": 33846,
+    "continents": "Europe",
+    "population": 2617820
+  },
+  {
+    "name": "Liechtenstein",
+    "latitude": 47.266666,
+    "longitude": 9.533334,
+    "landArea": 160,
+    "continents": "Europe",
+    "population": 38137
+  },
+  {
+    "name": "Malawi",
+    "latitude": -13.5,
+    "longitude": 34.0,
+    "landArea": 118484,
+    "continents": "Africa",
+    "population": 19129955
+  },
+  {
+    "name": "Lebanon",
+    "latitude": 33.833332,
+    "longitude": 35.833332,
+    "landArea": 10452,
+    "continents": "Asia",
+    "population": 6825442
+  },
+  {
+    "name": "Mongolia",
+    "latitude": 46.0,
+    "longitude": 105.0,
+    "landArea": 1564110,
+    "continents": "Asia",
+    "population": 3278292
+  },
+  {
+    "name": "Norway",
+    "latitude": 62.0,
+    "longitude": 10.0,
+    "landArea": 323802,
+    "continents": "Europe",
+    "population": 5379475
+  },
+  {
+    "name": "British Virgin Islands",
+    "latitude": 18.431383,
+    "longitude": -64.62305,
+    "landArea": 151,
+    "continents": "North America",
+    "population": 30237
+  },
+  {
+    "name": "Cameroon",
+    "latitude": 6.0,
+    "longitude": 12.0,
+    "landArea": 475442,
+    "continents": "Africa",
+    "population": 26545864
+  },
+  {
+    "name": "Thailand",
+    "latitude": 15.0,
+    "longitude": 100.0,
+    "landArea": 513120,
+    "continents": "Asia",
+    "population": 69799978
+  },
+  {
+    "name": "Nigeria",
+    "latitude": 10.0,
+    "longitude": 8.0,
+    "landArea": 923768,
+    "continents": "Africa",
+    "population": 206139587
+  },
+  {
+    "name": "Réunion",
+    "latitude": -21.15,
+    "longitude": 55.5,
+    "landArea": 2511,
+    "continents": "Africa",
+    "population": 840974
+  },
+  {
+    "name": "Cape Verde",
+    "latitude": 16.5388,
+    "longitude": 23.0418,
+    "landArea": 4033,
+    "continents": "Africa",
+    "population": 555988
+  },
+  {
+    "name": "Jersey",
+    "latitude": 49.25,
+    "longitude": -2.1666667,
+    "landArea": 116,
+    "continents": "Europe",
+    "population": 100800
+  },
+  {
+    "name": "Algeria",
+    "latitude": 28.0,
+    "longitude": 3.0,
+    "landArea": 2381741,
+    "continents": "Africa",
+    "population": 44700000
+  },
+  {
+    "name": "Laos",
+    "latitude": 18.0,
+    "longitude": 105.0,
+    "landArea": 236800,
+    "continents": "Asia",
+    "population": 7275556
+  },
+  {
+    "name": "Caribbean Netherlands",
+    "latitude": 12.18,
+    "longitude": -68.25,
+    "landArea": 328,
+    "continents": "North America",
+    "population": 25987
+  },
+  {
+    "name": "Azerbaijan",
+    "latitude": 40.5,
+    "longitude": 47.5,
+    "landArea": 86600,
+    "continents": "Asia",
+    "population": 10110116
+  },
+  {
+    "name": "Sint Maarten",
+    "latitude": 18.033333,
+    "longitude": -63.05,
+    "landArea": 34,
+    "continents": "North America",
+    "population": 40812
+  },
+  {
+    "name": "Morocco",
+    "latitude": 32.0,
+    "longitude": -5.0,
+    "landArea": 446550,
+    "continents": "Africa",
+    "population": 36910558
+  },
+  {
+    "name": "Åland Islands",
+    "latitude": 60.11667,
+    "longitude": 19.9,
+    "landArea": 1580,
+    "continents": "Europe",
+    "population": 29458
+  },
+  {
+    "name": "Bulgaria",
+    "latitude": 43.0,
+    "longitude": 25.0,
+    "landArea": 110879,
+    "continents": "Europe",
+    "population": 6927288
+  },
+  {
+    "name": "Burundi",
+    "latitude": -3.5,
+    "longitude": 30.0,
+    "landArea": 27834,
+    "continents": "Africa",
+    "population": 11890781
+  },
+  {
+    "name": "Uganda",
+    "latitude": 1.0,
+    "longitude": 32.0,
+    "landArea": 241550,
+    "continents": "Africa",
+    "population": 45741000
+  },
+  {
+    "name": "Kosovo",
+    "latitude": 42.666668,
+    "longitude": 21.166668,
+    "landArea": 10908,
+    "continents": "Europe",
+    "population": 1775378
+  },
+  {
+    "name": "Mozambique",
+    "latitude": -18.25,
+    "longitude": 35.0,
+    "landArea": 801590,
+    "continents": "Africa",
+    "population": 31255435
+  },
+  {
+    "name": "Georgia",
+    "latitude": 42.0,
+    "longitude": 43.5,
+    "landArea": 69700,
+    "continents": "Asia",
+    "population": 3714000
+  },
+  {
+    "name": "United Kingdom",
+    "latitude": 54.0,
+    "longitude": -2.0,
+    "landArea": 242900,
+    "continents": "Europe",
+    "population": 67215293
+  },
+  {
+    "name": "Wallis and Futuna",
+    "latitude": -13.3,
+    "longitude": -176.2,
+    "landArea": 142,
+    "continents": "Oceania",
+    "population": 11750
+  },
+  {
+    "name": "Pitcairn Islands",
+    "latitude": -25.066668,
+    "longitude": -130.1,
+    "landArea": 47,
+    "continents": "Oceania",
+    "population": 56
+  },
+  {
+    "name": "Romania",
+    "latitude": 46.0,
+    "longitude": 25.0,
+    "landArea": 238391,
+    "continents": "Europe",
+    "population": 19286123
+  },
+  {
+    "name": "Vietnam",
+    "latitude": 16.166666,
+    "longitude": 107.833336,
+    "landArea": 331212,
+    "continents": "Asia",
+    "population": 97338583
+  },
+  {
+    "name": "French Southern and Antarctic Lands",
+    "latitude": -49.25,
+    "longitude": 69.167,
+    "landArea": 7747,
+    "continents": "Antarctica",
+    "population": 400
+  },
+  {
+    "name": "Western Sahara",
+    "latitude": 24.5,
+    "longitude": -13.0,
+    "landArea": 266000,
+    "continents": "Africa",
+    "population": 510713
+  },
+  {
+    "name": "Japan",
+    "latitude": 36.0,
+    "longitude": 138.0,
+    "landArea": 377930,
+    "continents": "Asia",
+    "population": 125836021
+  },
+  {
+    "name": "Egypt",
+    "latitude": 27.0,
+    "longitude": 30.0,
+    "landArea": 1002450,
+    "continents": "Africa",
+    "population": 102334403
+  },
+  {
+    "name": "Liberia",
+    "latitude": 6.5,
+    "longitude": -9.5,
+    "landArea": 111369,
+    "continents": "Africa",
+    "population": 5057677
+  },
+  {
+    "name": "Lithuania",
+    "latitude": 56.0,
+    "longitude": 24.0,
+    "landArea": 65300,
+    "continents": "Europe",
+    "population": 2794700
+  },
+  {
+    "name": "Haiti",
+    "latitude": 19.0,
+    "longitude": -72.416664,
+    "landArea": 27750,
+    "continents": "North America",
+    "population": 11402533
+  },
+  {
+    "name": "United States Virgin Islands",
+    "latitude": 18.35,
+    "longitude": -64.933334,
+    "landArea": 347,
+    "continents": "North America",
+    "population": 106290
+  },
+  {
+    "name": "Papua New Guinea",
+    "latitude": -6.0,
+    "longitude": 147.0,
+    "landArea": 462840,
+    "continents": "Oceania",
+    "population": 8947027
+  },
+  {
+    "name": "Hong Kong",
+    "latitude": 22.267,
+    "longitude": 114.188,
+    "landArea": 1104,
+    "continents": "Asia",
+    "population": 7500700
+  },
+  {
+    "name": "Kyrgyzstan",
+    "latitude": 41.0,
+    "longitude": 75.0,
+    "landArea": 199951,
+    "continents": "Asia",
+    "population": 6591600
+  },
+  {
+    "name": "Palau",
+    "latitude": 7.5,
+    "longitude": 134.5,
+    "landArea": 459,
+    "continents": "Oceania",
+    "population": 18092
+  },
+  {
+    "name": "Madagascar",
+    "latitude": -20.0,
+    "longitude": 47.0,
+    "landArea": 587041,
+    "continents": "Africa",
+    "population": 27691019
+  },
+  {
+    "name": "Gambia",
+    "latitude": 13.466666,
+    "longitude": -16.566668,
+    "landArea": 10689,
+    "continents": "Africa",
+    "population": 2416664
+  },
+  {
+    "name": "Togo",
+    "latitude": 8.0,
+    "longitude": 1.1666666,
+    "landArea": 56785,
+    "continents": "Africa",
+    "population": 8278737
+  },
+  {
+    "name": "Tokelau",
+    "latitude": -9.0,
+    "longitude": -172.0,
+    "landArea": 12,
+    "continents": "Oceania",
+    "population": 1411
+  },
+  {
+    "name": "Slovenia",
+    "latitude": 46.116665,
+    "longitude": 14.816667,
+    "landArea": 20273,
+    "continents": "Europe",
+    "population": 2100126
+  },
+  {
+    "name": "Singapore",
+    "latitude": 1.3666667,
+    "longitude": 103.8,
+    "landArea": 710,
+    "continents": "Asia",
+    "population": 5685807
+  },
+  {
+    "name": "French Guiana",
+    "latitude": 4.0,
+    "longitude": -53.0,
+    "landArea": 83534,
+    "continents": "South America",
+    "population": 254541
+  },
+  {
+    "name": "United States",
+    "latitude": 38.0,
+    "longitude": -97.0,
+    "landArea": 9372610,
+    "continents": "North America",
+    "population": 329484123
+  },
+  {
+    "name": "Montserrat",
+    "latitude": 16.75,
+    "longitude": -62.2,
+    "landArea": 102,
+    "continents": "North America",
+    "population": 4922
+  },
+  {
+    "name": "Malaysia",
+    "latitude": 2.5,
+    "longitude": 112.5,
+    "landArea": 330803,
+    "continents": "Asia",
+    "population": 32365998
+  },
+  {
+    "name": "Germany",
+    "latitude": 51.0,
+    "longitude": 9.0,
+    "landArea": 357114,
+    "continents": "Europe",
+    "population": 83240525
+  },
+  {
+    "name": "Antigua and Barbuda",
+    "latitude": 17.05,
+    "longitude": -61.8,
+    "landArea": 442,
+    "continents": "North America",
+    "population": 97928
+  },
+  {
+    "name": "Saint Martin",
+    "latitude": 18.0708,
+    "longitude": 63.0501,
+    "landArea": 53,
+    "continents": "North America",
+    "population": 38659
+  },
+  {
+    "name": "Somalia",
+    "latitude": 10.0,
+    "longitude": 49.0,
+    "landArea": 637657,
+    "continents": "Africa",
+    "population": 15893219
+  },
+  {
+    "name": "Macau",
+    "latitude": 22.166666,
+    "longitude": 113.55,
+    "landArea": 30,
+    "continents": "Asia",
+    "population": 649342
+  },
+  {
+    "name": "Albania",
+    "latitude": 41.0,
+    "longitude": 20.0,
+    "landArea": 28748,
+    "continents": "Europe",
+    "population": 2837743
+  },
+  {
+    "name": "Mayotte",
+    "latitude": -12.833333,
+    "longitude": 45.166668,
+    "landArea": 374,
+    "continents": "Africa",
+    "population": 226915
+  },
+  {
+    "name": "Dominica",
+    "latitude": 15.416667,
+    "longitude": -61.333332,
+    "landArea": 751,
+    "continents": "North America",
+    "population": 71991
+  },
+  {
+    "name": "Zambia",
+    "latitude": -15.0,
+    "longitude": 30.0,
+    "landArea": 752612,
+    "continents": "Africa",
+    "population": 18383956
+  },
+  {
+    "name": "Anguilla",
+    "latitude": 18.25,
+    "longitude": -63.166668,
+    "landArea": 91,
+    "continents": "North America",
+    "population": 13452
+  },
+  {
+    "name": "Cook Islands",
+    "latitude": -21.233334,
+    "longitude": -159.76666,
+    "landArea": 236,
+    "continents": "Oceania",
+    "population": 18100
+  },
+  {
+    "name": "Martinique",
+    "latitude": 14.666667,
+    "longitude": -61.0,
+    "landArea": 1128,
+    "continents": "North America",
+    "population": 378243
+  },
+  {
+    "name": "Guinea",
+    "latitude": 11.0,
+    "longitude": -10.0,
+    "landArea": 245857,
+    "continents": "Africa",
+    "population": 13132792
+  },
+  {
+    "name": "Comoros",
+    "latitude": -12.166667,
+    "longitude": 44.25,
+    "landArea": 1862,
+    "continents": "Africa",
+    "population": 869595
+  },
+  {
+    "name": "Niue",
+    "latitude": -19.033333,
+    "longitude": -169.86667,
+    "landArea": 260,
+    "continents": "Oceania",
+    "population": 1470
+  },
+  {
+    "name": "Switzerland",
+    "latitude": 47.0,
+    "longitude": 8.0,
+    "landArea": 41284,
+    "continents": "Europe",
+    "population": 8654622
+  },
+  {
+    "name": "Norfolk Island",
+    "latitude": -29.033333,
+    "longitude": 167.95,
+    "landArea": 36,
+    "continents": "Oceania",
+    "population": 2302
+  },
+  {
+    "name": "Isle of Man",
+    "latitude": 54.25,
+    "longitude": -4.5,
+    "landArea": 572,
+    "continents": "Europe",
+    "population": 85032
+  },
+  {
+    "name": "Sudan",
+    "latitude": 15.0,
+    "longitude": 30.0,
+    "landArea": 1886068,
+    "continents": "Africa",
+    "population": 43849269
+  },
+  {
+    "name": "Tajikistan",
+    "latitude": 39.0,
+    "longitude": 71.0,
+    "landArea": 143100,
+    "continents": "Asia",
+    "population": 9537642
+  },
+  {
+    "name": "Uruguay",
+    "latitude": -33.0,
+    "longitude": -56.0,
+    "landArea": 181034,
+    "continents": "South America",
+    "population": 3473727
+  },
+  {
+    "name": "Cyprus",
+    "latitude": 35.0,
+    "longitude": 33.0,
+    "landArea": 9251,
+    "continents": "Europe",
+    "population": 1207361
+  },
+  {
+    "name": "Guinea-Bissau",
+    "latitude": 12.0,
+    "longitude": -15.0,
+    "landArea": 36125,
+    "continents": "Africa",
+    "population": 1967998
+  }
+]
