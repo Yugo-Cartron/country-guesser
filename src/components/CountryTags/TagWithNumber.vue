@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import {ref} from "vue";
-import arrow from "../assets/arrow.svg"
+import arrow from "../../assets/arrow.svg"
 
 const props = defineProps({
   label: String,

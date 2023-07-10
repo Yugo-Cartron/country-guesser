@@ -2,7 +2,8 @@
 import {onMounted, ref} from 'vue'
 import type {Country} from "@/model/Country";
 import countriesJson from "../assets/countries.json"
-import TagHistoryLine from "@/components/TagHistoryLine.vue";
+import TagHistoryLine from "@/components/CountryTags/TagLine.vue";
+import Autocomplete from "@/components/Autocomplete.vue";
 
 export type tagHistoryLineProps = {
   country: Country,
@@ -11,9 +12,10 @@ export type tagHistoryLineProps = {
 }
 
 const guess = ref('')
+const incompleteGuess = ref('')
 const unknownCountry = ref('')
 const unknownAnswer = ref(false)
-let countries: Map<String, Country> = new Map()
+const countries = ref<Map<string, Country>>(new Map())
 const tagHistoryLineList = ref<tagHistoryLineProps[]>([])
 let answer: Country | undefined;
 const annabelle = ref(false)
@@ -25,20 +27,21 @@ onMounted(() => {
 })
 
 function pickARandomAnswer() {
-  const countryNames = Array.from(countries.keys())
-  const randomCountryIndex = Math.floor(Math.random() * countries.size)
+  const countryNames = Array.from(countries.value.keys())
+  const randomCountryIndex = Math.floor(Math.random() * countries.value.size)
   const randomCountryName = countryNames[randomCountryIndex]
-  return countries.get(randomCountryName)
+  return countries.value.get(randomCountryName)
 }
 
-const wrongInputErrorMessage = document.getElementById("wrongInputErrorMessage")
+function updateAutocomplete() {
+  incompleteGuess.value = guess.value
+}
 function evaluateGuess() {
   unknownAnswer.value = false
   annabelle.value = (guess.value === 'Annabelle')
   if (isValid(guess.value)) {
-    if (countries) {
-      displayAttributes(countries.get(guess.value)!)
-    }
+    displayAttributes(countries.value.get(guess.value)!)
+
     if (guess.value === answer!.name)
       PlayerWin()
   } else {
@@ -50,19 +53,20 @@ function evaluateGuess() {
 
 function getDataFromJson() {
   countriesJson.forEach((country) => {
-    countries.set(country.name, {
+    countries.value.set(country.name, {
       name: country.name,
       lat: country.latitude,
       long: country.longitude,
       landArea: country.landArea,
       continents: country.continents,
-      population: country.population
+      population: country.population,
+      flag: country.flag,
     })
   })
 }
 
 function isValid(guess: string): boolean {
-  return countries.has(guess)
+  return countries.value.has(guess)
 }
 
 function PlayerWin() {
@@ -177,25 +181,20 @@ function addPopulation(country: Country, truthTable: Array<boolean>, directionTa
       </div>
 
 
-      <form @submit.prevent="evaluateGuess" class="flex flex-col mt-20 gap-3">
+      <form @submit.prevent="evaluateGuess" class="flex flex-col mt-20">
         <label class="font-semibold text-left mb-2">Make a guess : </label>
+        <p v-if="unknownAnswer" class="text-red-400 mb-1"><b>{{ unknownCountry }}</b> is not a country.</p>
         <div class="flex flex-row bg-[#eeeeee] rounded-full text-xl -translate-x-6 py-1 border hover:border-[#BF8055]">
-          <input class="pl-6 py-2" v-model="guess" placeholder="Ex: Argentina..."/>
+          <input class="pl-6 py-2" v-model="guess" @input="updateAutocomplete" placeholder="Ex: Argentina..."/>
           <button class="bg-[#BF8055] text-[#ffffff] rounded-full mr-2 m-1 py-3 px-8" type="submit" value="submit">
             Submit
           </button>
         </div>
-        <p v-if="unknownAnswer" class="text-red-400 "><b>{{ unknownCountry }}</b> is not a country.</p>
+        <Autocomplete id="autocomplete" :incomplete-guess="incompleteGuess" @selected-country="(selectedCountry) => guess = selectedCountry"/>
       </form>
-
-
 
       <img v-if="annabelle" src="../assets/backgrounds/annabelle.png"/>
 
-      <!--      <div class="grid grid-cols-2 gap-10 text-2xl mt-20">-->
-      <!--        <RouterLink to="/">Back home</RouterLink>-->
-      <!--        <RouterLink to="/tutorial">How to play</RouterLink>-->
-      <!--      </div>-->
     </div>
 
 

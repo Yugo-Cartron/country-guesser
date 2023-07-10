@@ -16,7 +16,7 @@ backgroundColor.value =
 <template>
   <div>
     <div :class="`tagHistory flex flex-row rounded-full w-fit h-fit mx-auto my-auto py-0.5 px-6 gap-2 justify-center items-center bg-[${backgroundColor}]`">
-      <p class="text-white text-xl">{{ props.continent }}</p>
+      <p class="text-white text-xl text-center">{{ props.continent }}</p>
     </div>
   </div>
 </template>
