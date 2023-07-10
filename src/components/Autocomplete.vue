@@ -1,0 +1,53 @@
+<script setup lang="ts">
+
+import type {Country} from "@/model/Country";
+import Suggestion from "@/components/Suggestion.vue";
+import {onMounted, onUpdated, ref} from "vue";
+import countriesJson from "@/assets/countries.json";
+
+const props = defineProps({
+  incompleteGuess: String,
+})
+
+let countries: Map<string, string>
+
+const flags = ref<Map<string, string>>(new Map())
+
+onMounted(() => {
+  countries = new Map()
+  countriesJson.forEach((country) => {
+    countries.set(country.name, country.flag)
+  })
+})
+
+
+const emits = defineEmits(['selectedCountry'])
+function emitSelectedCountry(selectedCountry: string) {
+  emits('selectedCountry', selectedCountry)
+}
+
+const suggestions = ref<Array<string>>([])
+
+onUpdated(() => {
+  if (props.incompleteGuess !== '') {
+    suggestions.value = Array.from(countries.keys()).filter((suggestion) => suggestion.includes(props.incompleteGuess))
+  } else {
+    suggestions.value = []
+  }
+})
+
+</script>
+
+<template>
+  <div class="mt-2 max-h-[25vh] overflow-y-auto">
+    <Suggestion v-for="suggestion in suggestions"
+                :country-name="suggestion"
+                :flag="countries.get(suggestion)"
+                @selected-country="(selectedCountry) => emitSelectedCountry(selectedCountry)"
+    />
+  </div>
+</template>
+
+<style scoped>
+
+</style>

@@ -1,9 +1,9 @@
 <script setup lang="ts">
-import TagHistory from "@/components/TagHistory.vue";
-import TagName from "@/components/TagName.vue";
+import TagHistory from "@/components/CountryTags/TagWithNumber.vue";
+import TagName from "@/components/CountryTags/TagName.vue";
 import type {Country} from "@/model/Country";
-import TagContinent from "@/components/TagContinent.vue";
-import TagLocation from "@/components/TagLocation.vue";
+import TagContinent from "@/components/CountryTags/TagContinent.vue";
+import TagLocation from "@/components/CountryTags/TagLocation.vue";
 
 const props = defineProps({
   country: Object as () => Country,
