@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import {onMounted, ref} from 'vue'
+import {computed, onMounted, ref} from 'vue'
 import type {Country} from "@/model/Country";
 import countriesJson from "../assets/countries.json"
 import TagHistoryLine from "@/components/CountryTags/TagLine.vue";
@@ -12,7 +12,6 @@ export type tagHistoryLineProps = {
 }
 
 const guess = ref('')
-const incompleteGuess = ref('')
 const unknownCountry = ref('')
 const unknownAnswer = ref(false)
 const countries = ref<Map<string, Country>>(new Map())
@@ -33,9 +32,10 @@ function pickARandomAnswer() {
   return countries.value.get(randomCountryName)
 }
 
-function updateAutocomplete() {
-  incompleteGuess.value = guess.value
-}
+const incompleteGuess = computed(() => {
+  return guess.value
+})
+
 function evaluateGuess() {
   unknownAnswer.value = false
   annabelle.value = (guess.value === 'Annabelle')
@@ -185,7 +185,7 @@ function addPopulation(country: Country, truthTable: Array<boolean>, directionTa
         <label class="font-semibold text-left mb-2">Make a guess : </label>
         <p v-if="unknownAnswer" class="text-red-400 mb-1"><b>{{ unknownCountry }}</b> is not a country.</p>
         <div class="flex flex-row bg-[#eeeeee] rounded-full text-xl -translate-x-6 py-1 border hover:border-[#BF8055]">
-          <input class="pl-6 py-2" v-model="guess" @input="updateAutocomplete" placeholder="Ex: Argentina..."/>
+          <input class="pl-6 py-2" v-model="guess" placeholder="Ex: Argentina..."/>
           <button class="bg-[#BF8055] text-[#ffffff] rounded-full mr-2 m-1 py-3 px-8" type="submit" value="submit">
             Submit
           </button>
