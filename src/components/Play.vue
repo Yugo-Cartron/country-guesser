@@ -11,6 +11,8 @@ export type tagHistoryLineProps = {
 }
 
 const guess = ref('')
+const unknownCountry = ref('')
+const unknownAnswer = ref(false)
 let countries: Map<String, Country> = new Map()
 const tagHistoryLineList = ref<tagHistoryLineProps[]>([])
 let answer: Country | undefined;
@@ -29,7 +31,9 @@ function pickARandomAnswer() {
   return countries.get(randomCountryName)
 }
 
+const wrongInputErrorMessage = document.getElementById("wrongInputErrorMessage")
 function evaluateGuess() {
+  unknownAnswer.value = false
   annabelle.value = (guess.value === 'Annabelle')
   if (isValid(guess.value)) {
     if (countries) {
@@ -37,6 +41,9 @@ function evaluateGuess() {
     }
     if (guess.value === answer!.name)
       PlayerWin()
+  } else {
+    unknownAnswer.value = true
+    unknownCountry.value = guess.value
   }
   guess.value = ''
 }
@@ -167,17 +174,21 @@ function addPopulation(country: Country, truthTable: Array<boolean>, directionTa
           <li>Continents</li>
           <li>Population</li>
         </ul>
-        <label class="font-semibold mt-20 mb-5 text-left">Make a guess : </label>
       </div>
 
 
-      <form @submit.prevent="evaluateGuess"
-            class="flex flex-row bg-[#eeeeee] rounded-full text-xl pl-10 py-1 border hover:border-[#BF8055]">
-        <input class="py-2" v-model="guess" placeholder="Ex: Argentina..."/>
-        <button class="bg-[#BF8055] text-[#ffffff] rounded-full mr-2 m-1 py-3 px-8" type="submit" value="submit">
-          Submit
-        </button>
+      <form @submit.prevent="evaluateGuess" class="flex flex-col mt-20 gap-3">
+        <label class="font-semibold text-left mb-2">Make a guess : </label>
+        <div class="flex flex-row bg-[#eeeeee] rounded-full text-xl -translate-x-6 py-1 border hover:border-[#BF8055]">
+          <input class="pl-6 py-2" v-model="guess" placeholder="Ex: Argentina..."/>
+          <button class="bg-[#BF8055] text-[#ffffff] rounded-full mr-2 m-1 py-3 px-8" type="submit" value="submit">
+            Submit
+          </button>
+        </div>
+        <p v-if="unknownAnswer" class="text-red-400 "><b>{{ unknownCountry }}</b> is not a country.</p>
       </form>
+
+
 
       <img v-if="annabelle" src="../assets/backgrounds/annabelle.png"/>
 
