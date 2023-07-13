@@ -6,9 +6,26 @@ import TagContinent from "@/components/CountryTags/TagContinent.vue";
 import TagLocation from "@/components/CountryTags/TagLocation.vue";
 
 const props = defineProps({
-  country: Object as () => Country,
-  truthTable: Array<boolean>,
-  directionTable: Array<number>,
+  country: {
+    type: Object as () => Country,
+    default: {
+      name: "",
+      lat: 0.0,
+      long: 0.0,
+      landArea: 0.0,
+      continent: "Europe",
+      population: "0",
+      flag: ""
+    }
+  },
+  truthTable: {
+    type: Array<boolean>,
+    default: [false, false, false, false, false]
+  },
+  directionTable: {
+    type: Array<number>,
+    default: [0, 0, 0, 0]
+  },
 })
 
 function arrowRotation(direction: number) {
@@ -31,9 +48,9 @@ function arrowRotation(direction: number) {
 </script>
 
 <template>
-  <div class="flex flex-row">
-    <TagName class="flex w-1/6 justify-center" :name="props.country.name" />
-    <TagLocation class="flex w-1/6 justify-center" :label="props.country.lat.toString()" :good="props.truthTable[0]" :rotation="arrowRotation(props.directionTable[0])"/>
+  <div v-if="true" class="tagline flex flex-row">
+    <TagName id="name" class="flex w-1/6 justify-start" :name="props.country.name" :flag="props.country.flag"/>
+    <TagLocation id="lat" class="flex w-1/6 justify-center" :label="props.country.lat.toString()" :good="props.truthTable[0]" :rotation="arrowRotation(props.directionTable[0])"/>
     <TagLocation class="flex w-1/6 justify-center" :label="props.country.long.toString()" :good="props.truthTable[1]" :rotation="arrowRotation(props.directionTable[1])"/>
     <TagHistory class="flex w-1/6 justify-center" :label="props.country.landArea.toString()" :good="props.truthTable[2]" :rotation="arrowRotation(props.directionTable[2])"/>
     <TagContinent class="flex w-1/6 justify-center" :continent="props.country.continents" :good="props.truthTable[3]" />
@@ -43,5 +60,14 @@ function arrowRotation(direction: number) {
 </template>
 
 <style scoped>
+
+.tagline {
+  animation: fade 0.8s;
+}
+
+@keyframes fade {
+  0% { opacity: 0}
+100% { opacity: 1}
+}
 
 </style>

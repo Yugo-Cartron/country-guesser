@@ -36,19 +36,32 @@ const incompleteGuess = computed(() => {
   return guess.value
 })
 
+function pickACountryWithAutocomplete(selectedCountry: string) {
+  guess.value = selectedCountry
+  evaluateGuess()
+}
+
 function evaluateGuess() {
   unknownAnswer.value = false
-  annabelle.value = (guess.value === 'Annabelle')
-  if (isValid(guess.value)) {
-    displayAttributes(countries.value.get(guess.value)!)
+  if(guess.value !== ''){
+    if (guess.value === 'Annabelle') {
+      annabelle.value = true
+      guess.value =''
+      return
+    } else {
+      annabelle.value = false
+    }
+    if (isValid(guess.value)) {
+      displayAttributes(countries.value.get(guess.value)!)
 
-    if (guess.value === answer!.name)
-      PlayerWin()
-  } else {
-    unknownAnswer.value = true
-    unknownCountry.value = guess.value
+      if (guess.value === answer!.name)
+        PlayerWin()
+    } else {
+      unknownAnswer.value = true
+      unknownCountry.value = guess.value
+    }
+    guess.value = ''
   }
-  guess.value = ''
 }
 
 function getDataFromJson() {
@@ -87,8 +100,7 @@ function displayAttributes(country: Country) {
     directionTable: directionTable,
   })
 
-  console.log(tagHistoryLineList)
-
+  updateCompass(country)
 }
 
 function addLat(country: Country, truthTable: Array<boolean>, directionTable: Array<Number>) {
@@ -161,11 +173,29 @@ function addPopulation(country: Country, truthTable: Array<boolean>, directionTa
   }
 }
 
+
+function updateCompass(country: Country) {
+  if(country.long !== answer!.long) {
+    let angleInRad = Math.atan(
+        (answer!.lat - country.lat )
+        /
+        (answer!.long - country.long)
+    )
+
+    if (country.long < answer!.long) {
+      angleInRad -= Math.PI
+    }
+    const compassArrow = document.getElementById("compassArrow")
+    compassArrow!.setAttribute("style", "transform: rotate(" + -(angleInRad) + "rad)")
+
+  }
+}
+
 </script>
 
 <template>
   <div class="flex flex-row h-screen">
-    <div class="flex flex-col w-1/3 items-center mt-20">
+    <div class="flex flex-col w-1/3 items-center pt-20 bg-[#F5FEFF]">
 
       <div class="flex flex-col items-start">
         <h1 class="tracking-[.4rem] font-bold">COUNTRY<a class="bg-[#BF8055] text-[#ffffff] p-1">GUESSER</a></h1>
@@ -181,7 +211,7 @@ function addPopulation(country: Country, truthTable: Array<boolean>, directionTa
       </div>
 
 
-      <form @submit.prevent="evaluateGuess" class="flex flex-col mt-20">
+      <form @submit.prevent="evaluateGuess" class="flex flex-col mt-16">
         <label class="font-semibold text-left mb-2">Make a guess : </label>
         <p v-if="unknownAnswer" class="text-red-400 mb-1"><b>{{ unknownCountry }}</b> is not a country.</p>
         <div class="flex flex-row bg-[#eeeeee] rounded-full text-xl -translate-x-6 py-1 border hover:border-[#BF8055]">
@@ -190,17 +220,27 @@ function addPopulation(country: Country, truthTable: Array<boolean>, directionTa
             Submit
           </button>
         </div>
-        <Autocomplete id="autocomplete" :incomplete-guess="incompleteGuess" @selected-country="(selectedCountry) => guess = selectedCountry"/>
+        <Autocomplete id="autocomplete" :incomplete-guess="incompleteGuess" @selected-country="(selectedCountry) => pickACountryWithAutocomplete(selectedCountry)"/>
       </form>
-
-      <img v-if="annabelle" src="../assets/backgrounds/annabelle.png"/>
+      <p v-if="annabelle">Thank you Annabelle for your wonderful design</p>
+      <img v-if="annabelle" class="max-h-[25vh]" src="../assets/backgrounds/annabelle.png"/>
 
     </div>
 
 
-    <div class="rightPart flex flex-col w-2/3 bg-[url('../assets/backgrounds/237.jpg)]">
+    <div class="rightPart flex flex-col w-2/3 h-full bg-[url('../assets/backgrounds/237.jpg)]">
+      <div class="flex flex-row max-h-[30vh] mt-5 px-20 gap-10 items-center justify-around">
+        <img class="max-h-[30vh] w-2/3 drop-shadow-xl object-scale-down" src="../assets/backgrounds/world.svg"/>
+        <div class="relative items-center">
+          <img class="object-scale-down opacity-60 max-h-[30vh] drop-shadow-2xl" src="../assets/compass-modified.png" />
+          <div id="compassArrow" class="absolute top-1/2 h-0 w-full  transition-all duration-1000">
+            <img class="-translate-y-1/2 scale-75 mx-8" src="../assets/compassArrow-2.svg">
+          </div>
+          <div class="absolute top-1/2 left-1/2 h-4 w-4 -translate-x-1/2 -translate-y-1/2 bg-[#FDF1E7] border-2 border-[#D98366] rounded-full"></div>
+        </div>
+      </div>
       <div
-          class="mt-8 mx-10 p-6 overflow-y-auto snap-end max-h-[50vh] rounded-xl bg-[#ffffffde] backdrop-blur-md drop-shadow-2xl">
+          class="my-5 mx-10 p-6 overflow-y-auto snap-end max-h-[70vh] rounded-xl bg-[#ffffffde] backdrop-blur-md drop-shadow-2xl">
         <div class="flex flex-row mb-6">
           <h3 class="flex w-1/6 items-center justify-center">COUNTRY</h3>
           <h3 class="flex w-1/6 items-center justify-center">LATITUDE</h3>
@@ -210,22 +250,22 @@ function addPopulation(country: Country, truthTable: Array<boolean>, directionTa
           <h3 class="flex w-1/6 items-center justify-center">POPULATION</h3>
         </div>
         <div id="historyGrid" class="flex flex-col-reverse gap-2">
-          <TagHistoryLine v-for="tagHistoryLine in tagHistoryLineList"
-                          class="transition-opacity duration-500 ease-in-out"
+          <TagHistoryLine v-for="(tagHistoryLine, index) in tagHistoryLineList"
+                          class="transition-all duration-500"
                           :country="tagHistoryLine.country"
                           :truthTable="tagHistoryLine.truthTable"
                           :directionTable="tagHistoryLine.directionTable"
           />
         </div>
       </div>
-
-      <img class="h-[50vh] py-6 px-20 opacity-100 drop-shadow-xl items-center" src="../assets/backgrounds/world.svg"/>
-
     </div>
   </div>
 </template>
 
 <style scoped>
+
+
+
 textarea:focus, input:focus {
   outline: none;
 }
@@ -251,9 +291,5 @@ p, li {
 .rightPart {
   background-image: url("../assets/backgrounds/237.jpg");
   background-size: cover;
-}
-
-.transition-opacity {
-  transition-property: opacity;
 }
 </style>
