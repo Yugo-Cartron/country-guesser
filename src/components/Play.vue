@@ -19,6 +19,7 @@ const tagHistoryLineList = ref<tagHistoryLineProps[]>([])
 let answer: Country | undefined;
 const annabelle = ref(false)
 const hint = ref(false)
+const guessCount = ref(0)
 
 onMounted(() => {
   getDataFromJson();
@@ -32,6 +33,7 @@ function newGame() {
   hint.value = false
   annabelle.value = false
   guess.value = ''
+  guessCount.value = 0
 }
 
 function pickARandomAnswer() {
@@ -69,6 +71,7 @@ function evaluateGuess() {
       unknownAnswer.value = true
       unknownCountry.value = guess.value
     }
+    guessCount.value ++
     guess.value = ''
   }
 }
@@ -233,11 +236,14 @@ function displayHint() {
           </button>
         </div>
         <div class="relative">
-          <Autocomplete id="autocomplete" class="absolute w-full top-0" :incomplete-guess="incompleteGuess" @selected-country="(selectedCountry) => pickACountryWithAutocomplete(selectedCountry)"/>
+          <Autocomplete id="autocomplete" class="absolute w-full top-0 z-50" :incomplete-guess="incompleteGuess" @selected-country="(selectedCountry) => pickACountryWithAutocomplete(selectedCountry)"/>
         </div>
       </form>
       <div class="flex flex-row text-xl gap-4 py-8">
-        <button class="bg-[#BF8055] text-[#ffffff] rounded-full py-3 px-8"
+        <div v-if="(guessCount < 5)" class="bg-[#eeeeee] text-[#bbbbbb] rounded-full py-3 px-8">
+          {{5-guessCount}} left
+        </div>
+        <button v-else class="bg-[#BF8055] text-[#ffffff] rounded-full py-3 px-8"
         @click="displayHint">
           Hint
         </button>
@@ -249,6 +255,7 @@ function displayHint() {
       <img v-if="hint" :src="answer!.flag" class="py-2 flex justify-center rounded-2xl items-center max-h-[15vh] drop-shadow-2xl" />
       <p v-if="annabelle">Thank you Annabelle for your wonderful design</p>
       <img v-if="annabelle" class="max-h-[20vh]" src="../assets/backgrounds/annabelle.png"/>
+      <h3 class="absolute bottom-0 text-4xl text-[#bbbbbb] left-0 ml-4 mb-4">Yugo Cartron © 2023 </h3>
     </div>
 
 
