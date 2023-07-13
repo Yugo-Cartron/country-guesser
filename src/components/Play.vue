@@ -18,12 +18,21 @@ const countries = ref<Map<string, Country>>(new Map())
 const tagHistoryLineList = ref<tagHistoryLineProps[]>([])
 let answer: Country | undefined;
 const annabelle = ref(false)
+const hint = ref(false)
 
 onMounted(() => {
   getDataFromJson();
+  newGame()
+})
+
+function newGame() {
   answer = pickARandomAnswer()
   console.log(answer)
-})
+  tagHistoryLineList.value = []
+  hint.value = false
+  annabelle.value = false
+  guess.value = ''
+}
 
 function pickARandomAnswer() {
   const countryNames = Array.from(countries.value.keys())
@@ -99,7 +108,6 @@ function displayAttributes(country: Country) {
     truthTable: truthTable,
     directionTable: directionTable,
   })
-
   updateCompass(country)
 }
 
@@ -191,6 +199,10 @@ function updateCompass(country: Country) {
   }
 }
 
+function displayHint() {
+  hint.value = !hint.value
+}
+
 </script>
 
 <template>
@@ -220,11 +232,23 @@ function updateCompass(country: Country) {
             Submit
           </button>
         </div>
-        <Autocomplete id="autocomplete" :incomplete-guess="incompleteGuess" @selected-country="(selectedCountry) => pickACountryWithAutocomplete(selectedCountry)"/>
+        <div class="relative">
+          <Autocomplete id="autocomplete" class="absolute w-full top-0" :incomplete-guess="incompleteGuess" @selected-country="(selectedCountry) => pickACountryWithAutocomplete(selectedCountry)"/>
+        </div>
       </form>
+      <div class="flex flex-row text-xl gap-4 py-8">
+        <button class="bg-[#BF8055] text-[#ffffff] rounded-full py-3 px-8"
+        @click="displayHint">
+          Hint
+        </button>
+        <button class="bg-[#BF8055] text-[#ffffff] rounded-full py-3 px-8"
+        @click="newGame">
+          Restart
+        </button>
+      </div>
+      <img v-if="hint" :src="answer!.flag" class="py-2 flex justify-center rounded-2xl items-center max-h-[15vh] drop-shadow-2xl" />
       <p v-if="annabelle">Thank you Annabelle for your wonderful design</p>
-      <img v-if="annabelle" class="max-h-[25vh]" src="../assets/backgrounds/annabelle.png"/>
-
+      <img v-if="annabelle" class="max-h-[20vh]" src="../assets/backgrounds/annabelle.png"/>
     </div>
 
 
@@ -250,12 +274,7 @@ function updateCompass(country: Country) {
           <h3 class="flex w-1/6 items-center justify-center">POPULATION</h3>
         </div>
         <div id="historyGrid" class="flex flex-col-reverse gap-2">
-<!--          <button class="bg-[#BF8055] text-[#ffffff] rounded-full">-->
-<!--            Restart-->
-<!--          </button>-->
-<!--          <div class="border-t-2 border-[#BDBDBD]"></div>-->
           <TagHistoryLine v-for="tagHistoryLine in tagHistoryLineList"
-                          class="transition-all duration-500"
                           :country="tagHistoryLine.country"
                           :truthTable="tagHistoryLine.truthTable"
                           :directionTable="tagHistoryLine.directionTable"
