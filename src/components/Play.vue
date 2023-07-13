@@ -250,12 +250,17 @@ function updateCompass(country: Country) {
           <h3 class="flex w-1/6 items-center justify-center">POPULATION</h3>
         </div>
         <div id="historyGrid" class="flex flex-col-reverse gap-2">
-          <TagHistoryLine v-for="(tagHistoryLine, index) in tagHistoryLineList"
+<!--          <button class="bg-[#BF8055] text-[#ffffff] rounded-full">-->
+<!--            Restart-->
+<!--          </button>-->
+<!--          <div class="border-t-2 border-[#BDBDBD]"></div>-->
+          <TagHistoryLine v-for="tagHistoryLine in tagHistoryLineList"
                           class="transition-all duration-500"
                           :country="tagHistoryLine.country"
                           :truthTable="tagHistoryLine.truthTable"
                           :directionTable="tagHistoryLine.directionTable"
           />
+
         </div>
       </div>
     </div>

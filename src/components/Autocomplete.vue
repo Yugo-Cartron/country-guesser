@@ -2,7 +2,7 @@
 
 import type {Country} from "@/model/Country";
 import Suggestion from "@/components/Suggestion.vue";
-import {onMounted, onUpdated, ref} from "vue";
+import {onMounted, onUpdated, ref, watch} from "vue";
 import countriesJson from "@/assets/countries.json";
 
 const props = defineProps({
@@ -14,8 +14,6 @@ const props = defineProps({
 
 let countries: Map<string, string>
 
-const flags = ref<Map<string, string>>(new Map())
-
 onMounted(() => {
   countries = new Map()
   countriesJson.forEach((country) => {
@@ -26,12 +24,13 @@ onMounted(() => {
 
 const emits = defineEmits(['selectedCountry'])
 function emitSelectedCountry(selectedCountry: string) {
+  console.log(selectedCountry)
   emits('selectedCountry', selectedCountry)
 }
 
 const suggestions = ref<Array<string>>([])
 
-onUpdated(() => {
+watch(props, () => {
   if (props.incompleteGuess !== '') {
     suggestions.value = Array.from(countries.keys()).filter((suggestion) => suggestion.includes(props.incompleteGuess))
   } else {
@@ -42,7 +41,7 @@ onUpdated(() => {
 </script>
 
 <template>
-  <div class="mt-4 rounded-xl rounded-xl bg-[#ffffffde] backdrop-blur-md drop-shadow-xl max-h-[25vh] overflow-y-auto -translate-x-6">
+  <div class="mt-4 rounded-xl bg-[#ffffffde] backdrop-blur-md drop-shadow-xl max-h-[25vh] overflow-y-auto -translate-x-6">
     <Suggestion v-for="suggestion in suggestions"
                 :country-name="suggestion"
                 :flag="countries.get(suggestion)"
