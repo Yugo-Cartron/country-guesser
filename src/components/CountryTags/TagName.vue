@@ -1,12 +1,16 @@
 <script setup lang="ts">
 const props = defineProps({
-  name: String
+  name: String,
+  flag: String
 })
 
 </script>
 
 <template>
-    <h3 class="flex justify-center text-xl py-7">{{ props.name }}</h3>
+  <div class="flex flex-row gap-2">
+    <img class="object-scale-down w-1/3" :src="props.flag" />
+    <h3 class="flex w-full justify-center text-center text-xl py-7">{{ props.name }}</h3>
+  </div>
 </template>
 
 <style scoped>

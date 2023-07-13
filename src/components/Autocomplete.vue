@@ -6,7 +6,10 @@ import {onMounted, onUpdated, ref} from "vue";
 import countriesJson from "@/assets/countries.json";
 
 const props = defineProps({
-  incompleteGuess: String,
+  incompleteGuess: {
+    type: String,
+    default: ""
+  },
 })
 
 let countries: Map<string, string>
@@ -39,7 +42,7 @@ onUpdated(() => {
 </script>
 
 <template>
-  <div class="mt-2 max-h-[25vh] overflow-y-auto">
+  <div class="mt-4 rounded-xl rounded-xl bg-[#ffffffde] backdrop-blur-md drop-shadow-xl max-h-[25vh] overflow-y-auto -translate-x-6">
     <Suggestion v-for="suggestion in suggestions"
                 :country-name="suggestion"
                 :flag="countries.get(suggestion)"
