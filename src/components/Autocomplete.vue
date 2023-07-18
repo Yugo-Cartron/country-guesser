@@ -41,7 +41,7 @@ watch(props, () => {
 </script>
 
 <template>
-  <div class="mt-4 rounded-xl bg-[#ffffffde] backdrop-blur-md drop-shadow-xl max-h-[25vh] overflow-y-auto -translate-x-6">
+  <div class="mt-4 rounded-xl bg-[#ffffffde] backdrop-blur-md drop-shadow-xl max-h-[25vh] overflow-y-auto 2xl:-translate-x-6">
     <Suggestion v-for="suggestion in suggestions"
                 :country-name="suggestion"
                 :flag="countries.get(suggestion)"

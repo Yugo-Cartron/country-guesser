@@ -209,11 +209,13 @@ function displayHint() {
 </script>
 
 <template>
-  <div class="flex flex-row h-screen">
-    <div class="flex flex-col w-1/3 items-center pt-20 bg-[#F5FEFF]">
-
+  <div class="flex flex-col lg:flex-row h-screen">
+    <div class="flex flex-col lg:w-1/3 items-center pt-20 bg-[#F5FEFF]">
+<!--      <div class="w-10 h-10 bg-pink-400 sm:bg-red-600 md:bg-blue-500 lg:bg-green-500 xl:bg-amber-200 2xl:bg-purple-500"></div>-->
       <div class="flex flex-col items-start">
-        <h1 class="tracking-[.4rem] font-bold">COUNTRY<a class="bg-[#BF8055] text-[#ffffff] p-1">GUESSER</a></h1>
+        <div class="flex w-full items-center justify-center">
+          <h1 class="tracking-[.4rem] font-bold">COUNTRY<br class="2xl:hidden"><a class="bg-[#BF8055] text-[#ffffff] p-1">GUESSER</a></h1>
+        </div>
         <h2 class="mt-10 font-semibold">Try to find the country</h2>
         <p class="mt-5">Each guess will give you more information about :</p>
         <ul class="list-disc pl-10 pt-3">
@@ -223,44 +225,47 @@ function displayHint() {
           <li>Continents</li>
           <li>Population</li>
         </ul>
-      </div>
 
-
-      <form @submit.prevent="evaluateGuess" class="flex flex-col mt-16">
-        <label class="font-semibold text-left mb-2">Make a guess : </label>
-        <p v-if="unknownAnswer" class="text-red-400 mb-1"><b>{{ unknownCountry }}</b> is not a country.</p>
-        <div class="flex flex-row bg-[#eeeeee] rounded-full text-xl -translate-x-6 py-1 border hover:border-[#BF8055]">
-          <input class="pl-6 py-2" v-model="guess" placeholder="Ex: Argentina..."/>
-          <button class="bg-[#BF8055] text-[#ffffff] rounded-full mr-2 m-1 py-3 px-8" type="submit" value="submit">
-            Submit
+        <form @submit.prevent="evaluateGuess" class="flex flex-col w-full mt-16">
+          <label class="font-semibold text-left mb-2">Make a guess : </label>
+          <p v-if="unknownAnswer" class="text-red-400 mb-1"><b>{{ unknownCountry }}</b> is not a country.</p>
+          <div class="flex flex-row w-full bg-[#eeeeee] rounded-full text-xl 2xl:-translate-x-6 py-1 border hover:border-[#BF8055]">
+            <input class="pl-6 py-2" v-model="guess" placeholder="Ex: Argentina..."/>
+            <button class="hidden 2xl:block bg-[#BF8055] text-[#ffffff] rounded-full mr-2 m-1 py-3 px-8" type="submit" value="submit">
+              Submit
+            </button>
+          </div>
+          <div class="relative">
+            <Autocomplete id="autocomplete" class="absolute w-full top-0 z-50" :incomplete-guess="incompleteGuess" @selected-country="(selectedCountry) => pickACountryWithAutocomplete(selectedCountry)"/>
+          </div>
+          <p class="2xl:hidden italic text-gray-700 mt-1 text-right">Press Enter to submit</p>
+        </form>
+        <div class="flex flex-col w-full 2xl:flex-row text-xl gap-4 py-8 items-center justify-center">
+          <div v-if="(guessCount < 5)" class="bg-[#eeeeee] text-[#bbbbbb] rounded-full py-3 px-8 text-center">
+            {{5-guessCount}} left
+          </div>
+          <button v-else class="bg-[#BF8055] text-[#ffffff] rounded-full py-3 px-8"
+                  @click="displayHint">
+            Hint
+          </button>
+          <button class="bg-[#BF8055] text-[#ffffff] rounded-full py-3 px-8"
+                  @click="newGame">
+            Restart
           </button>
         </div>
-        <div class="relative">
-          <Autocomplete id="autocomplete" class="absolute w-full top-0 z-50" :incomplete-guess="incompleteGuess" @selected-country="(selectedCountry) => pickACountryWithAutocomplete(selectedCountry)"/>
+        <div v-if="hint" class="flex w-full justify-center items-center">
+          <img :src="answer!.flag" class="py-2 flex rounded-2xl max-h-[15vh] drop-shadow-2xl" />
         </div>
-      </form>
-      <div class="flex flex-row text-xl gap-4 py-8">
-        <div v-if="(guessCount < 5)" class="bg-[#eeeeee] text-[#bbbbbb] rounded-full py-3 px-8">
-          {{5-guessCount}} left
-        </div>
-        <button v-else class="bg-[#BF8055] text-[#ffffff] rounded-full py-3 px-8"
-        @click="displayHint">
-          Hint
-        </button>
-        <button class="bg-[#BF8055] text-[#ffffff] rounded-full py-3 px-8"
-        @click="newGame">
-          Restart
-        </button>
+        <p v-if="annabelle">Thank you Annabelle for your wonderful design</p>
+        <img v-if="annabelle" class="max-h-[20vh]" src="../assets/backgrounds/annabelle.png"/>
+        <h3 class="lg:hidden absolute top-0 text-4xl text-[#bbbbbb] left-0 ml-4 mb-4">Yugo Cartron © 2023 </h3>
+        <h3 class="hidden lg:block absolute bottom-0 text-4xl text-[#bbbbbb] left-0 ml-4 mb-4">Yugo Cartron © 2023 </h3>
       </div>
-      <img v-if="hint" :src="answer!.flag" class="py-2 flex justify-center rounded-2xl items-center max-h-[15vh] drop-shadow-2xl" />
-      <p v-if="annabelle">Thank you Annabelle for your wonderful design</p>
-      <img v-if="annabelle" class="max-h-[20vh]" src="../assets/backgrounds/annabelle.png"/>
-      <h3 class="absolute bottom-0 text-4xl text-[#bbbbbb] left-0 ml-4 mb-4">Yugo Cartron © 2023 </h3>
     </div>
 
 
-    <div class="rightPart flex flex-col w-2/3 h-full bg-[url('../assets/backgrounds/237.jpg)]">
-      <div class="flex flex-row max-h-[30vh] mt-5 px-20 gap-10 items-center justify-around">
+    <div class="rightPart flex flex-col-reverse lg:flex-col lg:w-2/3 h-full bg-[url('../assets/backgrounds/237.jpg)]">
+      <div class="md:flex hidden md:flex-row max-h-[30vh] mt-5 px-20 gap-10 items-center justify-around">
         <img class="max-h-[30vh] w-2/3 drop-shadow-xl object-scale-down" src="../assets/backgrounds/world.svg"/>
         <div class="relative items-center">
           <img class="object-scale-down opacity-60 max-h-[30vh] drop-shadow-2xl" src="../assets/compass-modified.png" />
@@ -271,8 +276,8 @@ function displayHint() {
         </div>
       </div>
       <div
-          class="my-5 mx-10 p-6 overflow-y-auto snap-end max-h-[70vh] rounded-xl bg-[#ffffffde] backdrop-blur-md drop-shadow-2xl">
-        <div class="flex flex-row mb-6">
+          class="my-5 mx-10 p-6 overflow-y-auto lg:overflow-x-auto snap-end max-h-[70vh] rounded-xl bg-[#ffffffde] backdrop-blur-md drop-shadow-2xl">
+        <div class="flex flex-row mb-6 min-w-[900px]">
           <h3 class="flex w-1/6 items-center justify-center">COUNTRY</h3>
           <h3 class="flex w-1/6 items-center justify-center">LATITUDE</h3>
           <h3 class="flex w-1/6 items-center justify-center">LONGITUDE</h3>
@@ -280,13 +285,12 @@ function displayHint() {
           <h3 class="flex w-1/6 items-center justify-center">CONTINENT</h3>
           <h3 class="flex w-1/6 items-center justify-center">POPULATION</h3>
         </div>
-        <div id="historyGrid" class="flex flex-col-reverse gap-2">
+        <div id="historyGrid" class="flex flex-col-reverse gap-2 min-w-[900px]">
           <TagHistoryLine v-for="tagHistoryLine in tagHistoryLineList"
                           :country="tagHistoryLine.country"
                           :truthTable="tagHistoryLine.truthTable"
                           :directionTable="tagHistoryLine.directionTable"
           />
-
         </div>
       </div>
     </div>
