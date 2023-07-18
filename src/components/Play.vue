@@ -231,7 +231,7 @@ function displayHint() {
           <p v-if="unknownAnswer" class="text-red-400 mb-1"><b>{{ unknownCountry }}</b> is not a country.</p>
           <div class="flex flex-row w-full bg-[#eeeeee] rounded-full text-xl 2xl:-translate-x-6 py-1 border hover:border-[#BF8055]">
             <input class="pl-6 py-2" v-model="guess" placeholder="Ex: Argentina..."/>
-            <button class="hidden 2xl:block bg-[#BF8055] text-[#ffffff] rounded-full mr-2 m-1 py-3 px-8" type="submit" value="submit">
+            <button class="hidden 2xl:flex 2xl:translate-x-6 bg-[#BF8055] text-[#ffffff] rounded-full m-1 py-3 px-8" type="submit" value="submit">
               Submit
             </button>
           </div>

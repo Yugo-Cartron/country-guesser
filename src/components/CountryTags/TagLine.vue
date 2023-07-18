@@ -48,7 +48,7 @@ function arrowRotation(direction: number) {
 </script>
 
 <template>
-  <div v-if="true" class="tagline flex flex-row">
+  <div class="tagline flex flex-row">
     <TagName id="name" class="flex w-1/6 justify-start" :name="props.country.name" :flag="props.country.flag"/>
     <TagLocation id="lat" class="flex w-1/6 justify-center" :label="props.country.lat.toString()" :good="props.truthTable[0]" :rotation="arrowRotation(props.directionTable[0])"/>
     <TagLocation class="flex w-1/6 justify-center" :label="props.country.long.toString()" :good="props.truthTable[1]" :rotation="arrowRotation(props.directionTable[1])"/>
