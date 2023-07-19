@@ -1,5 +1,7 @@
 <script setup lang="ts">
-import {computed, onMounted, ref} from 'vue'
+import {onMounted, ref} from 'vue'
+import JSConfetti from "js-confetti";
+
 import type {Country} from "@/model/Country";
 import TagHistoryLine from "@/components/CountryTags/TagLine.vue";
 import Input from "@/components/Input/Input.vue";
@@ -46,7 +48,22 @@ function easterEgg() {
     annabelle.value = false
   }, 5000)
 }
+
+// const mainDiv = document.getElementById("main")
+
+const jsConfetti = new JSConfetti()
+
+
 function PlayerWin() {
+  jsConfetti.addConfetti({
+    // confettiColors: [
+    //   '#FF0A54', '#45F8F8', '#7DF870', '#F8FF2E', '#9E3FF6', '#FF832E',
+    // ],
+    emojis: ['🌈', '⚡️', '💥', '✨', '💫', '🌸'],
+    emojiSize: 40,
+    // confettiRadius: 10,
+    confettiNumber: 150,
+  })
 }
 
 function displayAttributes(country: Country) {
@@ -166,7 +183,7 @@ function displayHint() {
 </script>
 
 <template>
-  <div class="flex flex-col lg:flex-row h-screen">
+  <div id="main" class="flex flex-col lg:flex-row h-screen">
     <div class="flex flex-col lg:w-1/3 items-center pt-20 bg-[#F5FEFF]">
       <div class="flex flex-col items-start">
         <div class="flex w-full items-center justify-center">
