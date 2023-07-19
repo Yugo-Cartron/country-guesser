@@ -4,6 +4,7 @@ import type {Country} from "@/model/Country";
 import TagHistoryLine from "@/components/CountryTags/TagLine.vue";
 import Input from "@/components/Input/Input.vue";
 import {getCountry, isValid, pickARandomAnswer} from "@/tools/repository";
+import GridHeaderLine from "@/components/GridHeader/GridHeaderLine.vue";
 
 export type tagHistoryLineProps = {
   country: Country,
@@ -222,15 +223,7 @@ function displayHint() {
       </div>
       <div
           class="my-5 mx-10 p-6 overflow-y-auto lg:overflow-x-auto snap-end max-h-[70vh] rounded-xl bg-[#ffffffde] backdrop-blur-md drop-shadow-2xl">
-        <div class="flex flex-row mb-6 min-w-[900px]">
-          <!-- Create component -->
-          <h3 class="flex w-1/6 items-center justify-center">COUNTRY</h3>
-          <h3 class="flex w-1/6 items-center justify-center">LATITUDE</h3>
-          <h3 class="flex w-1/6 items-center justify-center">LONGITUDE</h3>
-          <h3 class="flex w-1/6 items-center justify-center">LAND AREA</h3>
-          <h3 class="flex w-1/6 items-center justify-center">CONTINENT</h3>
-          <h3 class="flex w-1/6 items-center justify-center">POPULATION</h3>
-        </div>
+        <GridHeaderLine />
         <div id="historyGrid" class="flex flex-col-reverse gap-2 min-w-[900px]">
           <TagHistoryLine v-for="tagHistoryLine in tagHistoryLineList"
                           :country="tagHistoryLine.country"
@@ -245,8 +238,6 @@ function displayHint() {
 
 <style scoped>
 
-
-
 h1 {
   font-size: 2.5rem;
   text-align: center;
@@ -258,7 +249,7 @@ h2 {
 }
 
 h3, label {
-  font-size: 1.5rem;
+  font-size: 1.25rem;
 }
 
 p, li {
