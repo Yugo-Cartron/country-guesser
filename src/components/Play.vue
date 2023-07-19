@@ -3,7 +3,7 @@ import {computed, onMounted, ref} from 'vue'
 import type {Country} from "@/model/Country";
 import TagHistoryLine from "@/components/CountryTags/TagLine.vue";
 import Input from "@/components/Input/Input.vue";
-import {getCountry, isValid, pickARandomAnswer} from "@/tools/repository";
+import {getCountry, pickARandomAnswer} from "@/tools/repository";
 import GridHeaderLine from "@/components/GridHeader/GridHeaderLine.vue";
 
 export type tagHistoryLineProps = {
@@ -12,8 +12,6 @@ export type tagHistoryLineProps = {
   directionTable: Array<number>
 }
 
-const unknownCountry = ref('')
-const unknownAnswer = ref(false)
 const tagHistoryLineList = ref<tagHistoryLineProps[]>([])
 let answer: Country | undefined;
 const annabelle = ref(false)
@@ -222,15 +220,18 @@ function displayHint() {
         </div>
       </div>
       <div
-          class="my-5 mx-10 p-6 overflow-y-auto lg:overflow-x-auto snap-end max-h-[70vh] rounded-xl bg-[#ffffffde] backdrop-blur-md drop-shadow-2xl">
+          class="my-5 mx-10 p-6 overflow-y-auto lg:overflow-x-auto snap-end max-h-[65vh] rounded-xl bg-[#ffffffde] backdrop-blur-md drop-shadow-2xl">
         <GridHeaderLine />
-        <div id="historyGrid" class="flex flex-col-reverse gap-2 min-w-[900px]">
-          <TagHistoryLine v-for="tagHistoryLine in tagHistoryLineList"
-                          :country="tagHistoryLine.country"
-                          :truthTable="tagHistoryLine.truthTable"
-                          :directionTable="tagHistoryLine.directionTable"
-          />
-        </div>
+        <TransitionGroup name="fade">
+          <div v-for="(tagHistoryLine,index) in tagHistoryLineList" :key="index"
+               class="flex flex-col-reverse gap-2 min-w-[900px]">
+            <TagHistoryLine
+                :country="tagHistoryLine.country"
+                :truthTable="tagHistoryLine.truthTable"
+                :directionTable="tagHistoryLine.directionTable"
+            />
+          </div>
+        </TransitionGroup>
       </div>
     </div>
   </div>
@@ -260,4 +261,29 @@ p, li {
   background-image: url("../assets/backgrounds/237.jpg");
   background-size: cover;
 }
+
+.item {
+  width: 100%;
+  height: 30px;
+  background-color: #f3f3f3;
+  border: 1px solid #666;
+  box-sizing: border-box;
+}
+
+.fade-move,
+.fade-enter-active,
+.fade-leave-active {
+  transition: all 0.5s cubic-bezier(0.55, 0, 0.1, 1);
+}
+
+.fade-enter-from,
+.fade-leave-to {
+  opacity: 0;
+  transform: scaleY(0.01) translate(30px, 0);
+}
+
+.fade-leave-active {
+  position: absolute;
+}
+
 </style>

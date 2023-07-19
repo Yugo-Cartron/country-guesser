@@ -56,13 +56,13 @@ function arrowRotation(direction: number) {
     <TagContinent class="flex w-1/6 justify-center" :continent="props.country.continents" :good="props.truthTable[3]" />
     <TagHistory class="flex w-1/6 justify-center" :label="props.country.population.toString()" :good="props.truthTable[4]" :rotation="arrowRotation(props.directionTable[3])"/>
   </div>
-  <div class="border-t-2 border-[#BDBDBD]"></div>
+<!--  <div class="border-t-2 border-[#BDBDBD]"></div>-->
 </template>
 
 <style scoped>
 
 .tagline {
-  animation: fade 0.8s;
+  //animation: fade 0.8s;
 }
 
 @keyframes fade {
