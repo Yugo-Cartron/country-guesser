@@ -1,9 +1,9 @@
 <script setup lang="ts">
 import {computed, onMounted, ref} from 'vue'
 import type {Country} from "@/model/Country";
-import countriesJson from "../assets/countries.json"
 import TagHistoryLine from "@/components/CountryTags/TagLine.vue";
-import Autocomplete from "@/components/Autocomplete.vue";
+import Input from "@/components/Input/Input.vue";
+import {getCountry, isValid, pickARandomAnswer} from "@/tools/repository";
 
 export type tagHistoryLineProps = {
   country: Country,
@@ -11,10 +11,8 @@ export type tagHistoryLineProps = {
   directionTable: Array<number>
 }
 
-const guess = ref('')
 const unknownCountry = ref('')
 const unknownAnswer = ref(false)
-const countries = ref<Map<string, Country>>(new Map())
 const tagHistoryLineList = ref<tagHistoryLineProps[]>([])
 let answer: Country | undefined;
 const annabelle = ref(false)
@@ -22,7 +20,6 @@ const hint = ref(false)
 const guessCount = ref(0)
 
 onMounted(() => {
-  getDataFromJson();
   newGame()
 })
 
@@ -32,68 +29,24 @@ function newGame() {
   tagHistoryLineList.value = []
   hint.value = false
   annabelle.value = false
-  guess.value = ''
   guessCount.value = 0
 }
 
-function pickARandomAnswer() {
-  const countryNames = Array.from(countries.value.keys())
-  const randomCountryIndex = Math.floor(Math.random() * countries.value.size)
-  const randomCountryName = countryNames[randomCountryIndex]
-  return countries.value.get(randomCountryName)
+function evaluateGuess(guess: string) {
+  displayAttributes(getCountry(guess))
+
+  if (guess === answer!.name)
+    PlayerWin()
+
+  guessCount.value ++
 }
 
-const incompleteGuess = computed(() => {
-  return guess.value
-})
-
-function pickACountryWithAutocomplete(selectedCountry: string) {
-  guess.value = selectedCountry
-  evaluateGuess()
+function easterEgg() {
+  annabelle.value = true
+  setTimeout(() => {
+    annabelle.value = false
+  }, 5000)
 }
-
-function evaluateGuess() {
-  unknownAnswer.value = false
-  if(guess.value !== ''){
-    if (guess.value === 'Annabelle') {
-      annabelle.value = true
-      guess.value =''
-      return
-    } else {
-      annabelle.value = false
-    }
-    if (isValid(guess.value)) {
-      displayAttributes(countries.value.get(guess.value)!)
-
-      if (guess.value === answer!.name)
-        PlayerWin()
-    } else {
-      unknownAnswer.value = true
-      unknownCountry.value = guess.value
-    }
-    guessCount.value ++
-    guess.value = ''
-  }
-}
-
-function getDataFromJson() {
-  countriesJson.forEach((country) => {
-    countries.value.set(country.name, {
-      name: country.name,
-      lat: country.latitude,
-      long: country.longitude,
-      landArea: country.landArea,
-      continents: country.continents,
-      population: country.population,
-      flag: country.flag,
-    })
-  })
-}
-
-function isValid(guess: string): boolean {
-  return countries.value.has(guess)
-}
-
 function PlayerWin() {
 }
 
@@ -186,8 +139,9 @@ function addPopulation(country: Country, truthTable: Array<boolean>, directionTa
 
 
 function updateCompass(country: Country) {
+  let angleInRad = 0
   if(country.long !== answer!.long) {
-    let angleInRad = Math.atan(
+    angleInRad = Math.atan(
         (answer!.lat - country.lat )
         /
         (answer!.long - country.long)
@@ -196,10 +150,14 @@ function updateCompass(country: Country) {
     if (country.long < answer!.long) {
       angleInRad -= Math.PI
     }
-    const compassArrow = document.getElementById("compassArrow")
-    compassArrow!.setAttribute("style", "transform: rotate(" + -(angleInRad) + "rad)")
-
   }
+  else {
+    angleInRad = country.lat > answer!.lat
+        ? Math.PI/2
+        : -Math.PI/2
+  }
+  const compassArrow = document.getElementById("compassArrow")
+  compassArrow!.setAttribute("style", "transform: rotate(" + -(angleInRad) + "rad)")
 }
 
 function displayHint() {
@@ -211,10 +169,9 @@ function displayHint() {
 <template>
   <div class="flex flex-col lg:flex-row h-screen">
     <div class="flex flex-col lg:w-1/3 items-center pt-20 bg-[#F5FEFF]">
-<!--      <div class="w-10 h-10 bg-pink-400 sm:bg-red-600 md:bg-blue-500 lg:bg-green-500 xl:bg-amber-200 2xl:bg-purple-500"></div>-->
       <div class="flex flex-col items-start">
         <div class="flex w-full items-center justify-center">
-          <h1 class="tracking-[.4rem] font-bold">COUNTRY<br class="2xl:hidden"><a class="bg-[#BF8055] text-[#ffffff] p-1">GUESSER</a></h1>
+          <h1 class="tracking-[.4rem] font-bold">COUNTRY<br class="2xl:hidden"><span class="bg-[#BF8055] text-[#ffffff] p-1">GUESSER</span></h1>
         </div>
         <h2 class="mt-10 font-semibold">Try to find the country</h2>
         <p class="mt-5">Each guess will give you more information about :</p>
@@ -225,21 +182,9 @@ function displayHint() {
           <li>Continents</li>
           <li>Population</li>
         </ul>
-
-        <form @submit.prevent="evaluateGuess" class="flex flex-col w-full mt-16">
-          <label class="font-semibold text-left mb-2">Make a guess : </label>
-          <p v-if="unknownAnswer" class="text-red-400 mb-1"><b>{{ unknownCountry }}</b> is not a country.</p>
-          <div class="flex flex-row w-full bg-[#eeeeee] rounded-full text-xl 2xl:-translate-x-6 py-1 border hover:border-[#BF8055]">
-            <input class="pl-6 py-2" v-model="guess" placeholder="Ex: Argentina..."/>
-            <button class="hidden 2xl:flex 2xl:translate-x-6 bg-[#BF8055] text-[#ffffff] rounded-full m-1 py-3 px-8" type="submit" value="submit">
-              Submit
-            </button>
-          </div>
-          <div class="relative">
-            <Autocomplete id="autocomplete" class="absolute w-full top-0 z-50" :incomplete-guess="incompleteGuess" @selected-country="(selectedCountry) => pickACountryWithAutocomplete(selectedCountry)"/>
-          </div>
-          <p class="2xl:hidden italic text-gray-700 mt-1 text-right">Press Enter to submit</p>
-        </form>
+        <Input @guess="(guessEmit) => evaluateGuess(guessEmit)"
+               @annabelle="easterEgg"
+        />
         <div class="flex flex-col w-full 2xl:flex-row text-xl gap-4 py-8 items-center justify-center">
           <div v-if="(guessCount < 5)" class="bg-[#eeeeee] text-[#bbbbbb] rounded-full py-3 px-8 text-center">
             {{5-guessCount}} left
@@ -278,6 +223,7 @@ function displayHint() {
       <div
           class="my-5 mx-10 p-6 overflow-y-auto lg:overflow-x-auto snap-end max-h-[70vh] rounded-xl bg-[#ffffffde] backdrop-blur-md drop-shadow-2xl">
         <div class="flex flex-row mb-6 min-w-[900px]">
+          <!-- Create component -->
           <h3 class="flex w-1/6 items-center justify-center">COUNTRY</h3>
           <h3 class="flex w-1/6 items-center justify-center">LATITUDE</h3>
           <h3 class="flex w-1/6 items-center justify-center">LONGITUDE</h3>
@@ -300,10 +246,6 @@ function displayHint() {
 <style scoped>
 
 
-
-textarea:focus, input:focus {
-  outline: none;
-}
 
 h1 {
   font-size: 2.5rem;
