@@ -222,16 +222,17 @@ function displayHint() {
       <div
           class="my-5 mx-10 p-6 overflow-y-auto lg:overflow-x-auto snap-end max-h-[65vh] rounded-xl bg-[#ffffffde] backdrop-blur-md drop-shadow-2xl">
         <GridHeaderLine />
-        <TransitionGroup name="fade">
-          <div v-for="(tagHistoryLine,index) in tagHistoryLineList" :key="index"
-               class="flex flex-col-reverse gap-2 min-w-[900px]">
-            <TagHistoryLine
-                :country="tagHistoryLine.country"
-                :truthTable="tagHistoryLine.truthTable"
-                :directionTable="tagHistoryLine.directionTable"
-            />
-          </div>
-        </TransitionGroup>
+        <div class="flex flex-col-reverse gap-2 min-w-[900px]">
+          <TransitionGroup name="fade" >
+            <div v-for="(tagHistoryLine,index) in tagHistoryLineList" :key="index">
+              <TagHistoryLine
+                  :country="tagHistoryLine.country"
+                  :truthTable="tagHistoryLine.truthTable"
+                  :directionTable="tagHistoryLine.directionTable"
+              />
+            </div>
+          </TransitionGroup>
+        </div>
       </div>
     </div>
   </div>
