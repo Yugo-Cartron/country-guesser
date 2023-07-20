@@ -1,5 +1,5 @@
 import countriesJson from "@/assets/countries.json";
-import {Country} from "@/model/Country";
+import type {Country} from "@/model/Country";
 
 const countries: Map<string, Country> = new Map()
 
