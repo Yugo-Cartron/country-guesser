@@ -49,11 +49,7 @@ function easterEgg() {
   }, 5000)
 }
 
-// const mainDiv = document.getElementById("main")
-
 const jsConfetti = new JSConfetti()
-
-
 function PlayerWin() {
   jsConfetti.addConfetti({
     // confettiColors: [
@@ -183,7 +179,7 @@ function displayHint() {
 </script>
 
 <template>
-  <div id="main" class="flex flex-col lg:flex-row h-screen">
+  <div class="flex flex-col lg:flex-row h-screen">
     <div class="flex flex-col lg:w-1/3 items-center pt-20 bg-[#F5FEFF]">
       <div class="flex flex-col items-start">
         <div class="flex w-full items-center justify-center">
